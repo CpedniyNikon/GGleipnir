@@ -1,0 +1,7 @@
+services:
+  back:
+    container_name: 'back'
+    build: /ggleipnir-back
+    ports:
+      - "8080:8080"
+    restart: always
