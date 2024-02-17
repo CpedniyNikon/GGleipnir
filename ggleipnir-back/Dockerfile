@@ -12,8 +12,8 @@ ARG JAR_FILE=/opt/app/build/libs/*SNAPSHOT.jar
 
 WORKDIR /opt/app
 
-COPY --from=BUILD ${JAR_FILE} gamestudy.jar
+COPY --from=BUILD ${JAR_FILE} ggleipnir-back.jar
 
-ENTRYPOINT ["java","-jar","gamestudy.jar"]
+ENTRYPOINT ["java","-jar","ggleipnir-back.jar"]
 
 
