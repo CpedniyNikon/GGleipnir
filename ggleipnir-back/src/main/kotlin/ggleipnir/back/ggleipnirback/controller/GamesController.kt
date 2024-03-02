@@ -1,5 +1,6 @@
 package ggleipnir.back.ggleipnirback.controller
 
+import ggleipnir.back.ggleipnirback.model.Category
 import ggleipnir.back.ggleipnirback.model.GameCart
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,12 +16,12 @@ class GamesController {
         @RequestParam("offset", required = false, defaultValue = "0") offset: Int
     ): List<GameCart> {
         val gameCarts: List<GameCart> = listOf(
-            GameCart("dota 2", "url", 100),
-            GameCart("counter-strike 1.6", "url", 10),
-            GameCart("counter-strike 2", "url", 10),
-            GameCart("world of warcraft", "url", 10),
-            GameCart("path of exile", "url", 10),
-            GameCart("sirus", "url", 10)
+            GameCart("dota 2", "url", 100, listOf(Category.MOBA, Category.MULTIPLAYER)),
+            GameCart("counter-strike 1.6", "url", 10, listOf(Category.SHOOTER, Category.MULTIPLAYER)),
+            GameCart("counter-strike 2", "url", 10, listOf(Category.SHOOTER, Category.MULTIPLAYER)),
+            GameCart("world of warcraft", "url", 10, listOf(Category.MOBA, Category.RPG, Category.MULTIPLAYER)),
+            GameCart("path of exile", "url", 10, listOf(Category.MULTIPLAYER, Category.MOBA)),
+            GameCart("sirus", "url", 10, listOf(Category.MULTIPLAYER, Category.MOBA))
         )
         if (offset > gameCarts.size) {
             return listOf()
