@@ -7,7 +7,7 @@ class GameModel {
 
   GameModel.fromJson(Map<String, dynamic> json)
       : name = json['name'],
-        imageUrl = 'https://i.pinimg.com/originals/2d/cd/80/2dcd80c6f5a21a437313adde93b373d8.png',
+        imageUrl = 'https://static-cdn.jtvnw.net/ttv-boxart/29595-285x380.jpg',
         peopleInGame = json['peoplesInGame'];
 
 

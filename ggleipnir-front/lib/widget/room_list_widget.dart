@@ -22,19 +22,48 @@ class RoomListWidget extends ConsumerWidget {
         } else {
           final List<GameModel>? data = snapshot.data;
           gameRepository.addList(data!);
-          return ListView.builder(
+          return GridView.builder(
             shrinkWrap: true,
             itemCount: data.length,
-            itemExtent: 20,
             itemBuilder: (BuildContext context, int index) {
-              return Row(
-                children: [
-                  Text(gameRepository.allEntries()[index].name),
-                  Image.network(gameRepository.allEntries()[index].imageUrl),
-                  Text("${gameRepository.allEntries()[index].peopleInGame}"),
-                ],
+              return Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 1,
+                  ),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(5.0),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Image.network(
+                          gameRepository.allEntries()[index].imageUrl),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      width: double.infinity,
+                      child: Text(
+                        gameRepository.allEntries()[index].name,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      width: double.infinity,
+                      child: Text(
+                        "${gameRepository.allEntries()[index].peopleInGame}",
+                      ),
+                    ),
+                  ],
+                ),
               );
             },
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20),
           );
         }
       },

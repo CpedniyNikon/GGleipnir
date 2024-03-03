@@ -8,11 +8,13 @@ class HttpClient {
   final String baseUrl = 'http://localhost:8080';
 
   Future<List<GameModel>> fetchData() async {
-    final response = await http.get(Uri.parse('$baseUrl/v1/games'));
+    final response = await http.get(
+      Uri.parse('$baseUrl/v1/games'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonData = json.decode(response.body);
-      final List<GameModel> data = jsonData.map((json) => GameModel.fromJson(json)).toList();
+      final List<GameModel> data =
+          jsonData.map((json) => GameModel.fromJson(json)).toList();
       debugPrint(data.toString());
 
       return data;
