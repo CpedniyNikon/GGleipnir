@@ -2,21 +2,21 @@ class GameModel {
   String name;
   String imageUrl;
   int peopleInGame;
+  List<String> category;
 
-  GameModel(this.name, this.imageUrl, this.peopleInGame);
+  GameModel(this.name, this.imageUrl, this.peopleInGame, this.category);
 
   GameModel.fromJson(Map<String, dynamic> json)
       : name = json['name'],
-        imageUrl = 'https://i.pinimg.com/originals/2d/cd/80/2dcd80c6f5a21a437313adde93b373d8.png',
-        peopleInGame = json['peoplesInGame'];
-
+        imageUrl = 'https://static-cdn.jtvnw.net/ttv-boxart/29595-285x380.jpg',
+        peopleInGame = json['peoplesInGame'],
+        category = List<String>.from(json['category']);
 
   Map<String, dynamic> toJson() =>
-      {'name': name, 'imageUrl': imageUrl, 'peopleInGame': peopleInGame};
+      {'name': name, 'imageUrl': imageUrl, 'peopleInGame': peopleInGame, 'categories': category};
 
   @override
   String toString() {
-    return "$name $imageUrl $peopleInGame";
+    return "$name $imageUrl $peopleInGame $category";
   }
 }
-
