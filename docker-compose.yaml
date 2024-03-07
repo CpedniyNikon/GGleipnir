@@ -1,7 +1,15 @@
 services:
-  back:
-    container_name: 'back'
+  core:
+    container_name: 'core'
     build: /ggleipnir-back/core
     ports:
       - "8080:8080"
     restart: always
+
+  media:
+    container_name: 'media'
+    build: /ggleipnir-back/media
+    ports:
+      - "8090:8090"
+    restart: always
+
