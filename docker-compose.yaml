@@ -12,9 +12,12 @@ services:
     ports:
       - "8090:8090"
     restart: always
+    networks:
+      - minio_net
 
   minio:
     image: quay.io/minio/minio
+    container_name: minio_container
     command: server /data --console-address ":9090"
     restart: always
     ports:

@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:21
 
 # создание директории приложения
 WORKDIR /media
@@ -8,4 +8,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8090
-CMD [ "node", "src/server.js" ]
+CMD [ "node", "src/main.js" ]
