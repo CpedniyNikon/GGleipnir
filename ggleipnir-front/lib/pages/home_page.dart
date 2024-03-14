@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ggleipnir_front/controllers/http_client_controller.dart';
-import 'package:ggleipnir_front/models/game_model.dart';
-import 'package:ggleipnir_front/widget/room_list_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ggleipnir_front/controllers/game_repository_controller.dart';
+import 'package:ggleipnir_front/repositories/game_repository.dart';
+import 'package:ggleipnir_front/widget/game_list_widget.dart';
 
-class HomePage extends ConsumerStatefulWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  ConsumerState<HomePage> createState() => _ConsumerState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _ConsumerState extends ConsumerState<HomePage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('GGleipnir'),
@@ -26,11 +25,15 @@ class _ConsumerState extends ConsumerState<HomePage> {
         ],
         backgroundColor: Colors.green,
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              RoomListWidget(),
+              BlocProvider(
+                  create: (BuildContext context) => GameRepositoryController(
+                    GameRepository([]),
+                      )..getGameList(),
+                  child: const GameListWidget()),
             ],
           ),
         ),

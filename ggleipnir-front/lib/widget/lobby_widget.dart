@@ -1,27 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:ggleipnir_front/controllers/game_repository_controller.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ggleipnir_front/controllers/lobby_repository_controller.dart';
-import 'package:ggleipnir_front/routes/routes.dart';
 
-class LobbyWidget extends ConsumerWidget {
+class LobbyWidget extends StatelessWidget {
   final int index;
+
   const LobbyWidget({super.key, required this.index});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final lobbyRepository = ref.watch(lobbyRepositoryProvider);
-
+  Widget build(BuildContext context) {
+    final lobbyList = context.watch<LobbyRepositoryController>();
     return InkWell(
-      onTap: () {
-      },
+      onTap: () {},
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            lobbyRepository.allEntries()[index].toString(),
+            lobbyList.state.lobbies[index].name,
+          ),
+          Text(
+            "${lobbyList.state.lobbies[index].playersCount} игроков",
+          ),
+          Text(
+            "${lobbyList.state.lobbies[index].id}",
+          ),
+          Text(
+            "${lobbyList.state.lobbies[index].ping}",
+          ),
+          Text(
+            "${lobbyList.state.lobbies[index].closed}",
           ),
         ],
       ),

@@ -1,43 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ggleipnir_front/controllers/game_name_provider.dart';
-import 'package:ggleipnir_front/controllers/http_client_controller.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:ggleipnir_front/controllers/lobby_repository_controller.dart';
 import 'package:ggleipnir_front/models/lobby_model.dart';
+import 'package:ggleipnir_front/repositories/lobby_repository.dart';
 import 'package:ggleipnir_front/widget/lobby_widget.dart';
 
-class LobbyListWidget extends ConsumerWidget {
+class LobbyListWidget extends StatelessWidget {
   const LobbyListWidget({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final gameName = ref.watch(gameNameProvider);
-    final lobbyList = ref.watch(lobbyListProvider);
-    final gameRepository = ref.read(lobbyRepositoryProvider.notifier);
-
-    return FutureBuilder<List<LobbyModel>>(
-      future: lobbyList.getLobbyList(gameName),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
-        } else if (snapshot.hasError) {
-          return Text('Error: ${snapshot.error}');
-        } else {
-          final List<LobbyModel>? data = snapshot.data;
-          gameRepository.state.addList(data!);
-          return GridView.builder(
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (BuildContext context) => LobbyRepositoryController(
+        LobbyRepository([]),
+      )..getLobbyList(
+          Get.parameters['gameName']!,
+        ),
+      child: BlocBuilder<LobbyRepositoryController, LobbyRepository>(
+        builder: (context, state) {
+          return ListView.builder(
             shrinkWrap: true,
-            itemCount: data.length,
+            itemCount: state.lobbies.length,
             itemBuilder: (BuildContext context, int index) {
               return LobbyWidget(index: index);
             },
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: MediaQuery.of(context).size.width ~/ 200,
-              childAspectRatio: 200 / 300,
-            ),
+
           );
-        }
-      },
+        },
+      ),
     );
   }
 }

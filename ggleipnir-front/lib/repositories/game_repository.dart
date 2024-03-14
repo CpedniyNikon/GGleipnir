@@ -1,21 +1,29 @@
 import 'package:ggleipnir_front/models/game_model.dart';
 
 class GameRepository {
-  List<GameModel> _entries = [];
+  List<GameModel> games;
+
+  GameRepository(this.games);
+
+  GameRepository.initial() : games = [];
+
+  GameRepository copyWith({required List<GameModel> games}) {
+    return GameRepository(games);
+  }
 
   addEntry(GameModel entry)  {
-    _entries.add(entry);
+    games.add(entry);
   }
 
   addList(List<GameModel> entries)  {
-    _entries = [..._entries, ...entries];
+    games = [...games, ...entries];
   }
 
   removeEntry(GameModel entry)  {
-    _entries.remove(entry);
+    games.remove(entry);
   }
 
   List<GameModel> allEntries() {
-    return _entries;
+    return games;
   }
 }

@@ -2,21 +2,30 @@
 import 'package:ggleipnir_front/models/lobby_model.dart';
 
 class LobbyRepository {
-  List<LobbyModel> _entries = [];
+  List<LobbyModel> lobbies;
+
+  LobbyRepository(this.lobbies);
+
+  LobbyRepository.initial() : lobbies = [];
+
+  LobbyRepository copyWith({required List<LobbyModel> games}) {
+    return LobbyRepository(games);
+  }
 
   addEntry(LobbyModel entry)  {
-    _entries.add(entry);
+    lobbies.add(entry);
   }
 
   addList(List<LobbyModel> entries)  {
-    _entries = [..._entries, ...entries];
+    lobbies = [...lobbies, ...entries];
   }
 
   removeEntry(LobbyModel entry)  {
-    _entries.remove(entry);
+    lobbies.remove(entry);
   }
 
   List<LobbyModel> allEntries() {
-    return _entries;
+    return lobbies;
   }
+
 }
