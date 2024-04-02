@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ggleipnir_front/app_bars/authorized_app_bar.dart';
+import 'package:ggleipnir_front/app_bars/unauthorized_app_bar.dart';
+import 'package:ggleipnir_front/globals/global_variables.dart';
 import 'package:ggleipnir_front/widget/lobby_list_widget.dart';
 
 class GameLobbiesPage extends StatelessWidget {
@@ -7,16 +10,9 @@ class GameLobbiesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('GGleipnir'),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text("Profile"),
-          ),
-        ],
-        backgroundColor: Colors.green,
-      ),
+      appBar: GlobalVariables.isAuthorized
+          ? const AuthorizedAppBar()
+          : const UnAuthorizedAppBar() as PreferredSizeWidget,
       body: const SafeArea(
         child: SingleChildScrollView(
           child: Column(

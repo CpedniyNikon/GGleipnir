@@ -26,7 +26,6 @@ class LobbyListWidget extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return LobbyWidget(index: index);
             },
-
           );
         },
       ),

@@ -10,9 +10,10 @@ class GameRepositoryController extends Cubit<GameRepository> {
   final String baseUrl = 'http://localhost:8080';
   GameRepositoryController(super.initialState);
 
+  void followGame(GameModel gameModel) => emit(state.addEntry(gameModel, GameType.followed));
 
   void getGameList() async {
-    emit(state.copyWith(games: []));
+    emit(state.copyWith(gamesOnline: [], followedGames: []));
 
     final response = await http.get(
       Uri.parse('$baseUrl/v1/games'));
@@ -23,10 +24,9 @@ class GameRepositoryController extends Cubit<GameRepository> {
           jsonData.map((json) => GameModel.fromJson(json)).toList();
       debugPrint(data.toString());
 
-      emit(state.copyWith(games: data));
+      emit(state.copyWith(gamesOnline: data, followedGames: state.followedGames));
     } else {
       throw Exception('Failed to load data');
     }
   }
-
 }

@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:ggleipnir_front/controllers/game_repository_controller.dart';
-import 'package:ggleipnir_front/controllers/lobby_repository_controller.dart';
-import 'package:ggleipnir_front/repositories/lobby_repository.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 
 class GameWidget extends StatelessWidget {
@@ -18,23 +16,25 @@ class GameWidget extends StatelessWidget {
 
     return InkWell(
       onTap: () {
+        gameList.state.followedGames.add(gameList.state.gamesOnline[index]);
+        debugPrint('${gameList.state.followedGames.length}');
         Get.toNamed(Routes.gameLobbies,
-            parameters: {'gameName': gameList.state.games[index].name});
+            parameters: {'gameName': gameList.state.gamesOnline[index].name});
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: Image.network(gameList.state.games[index].imageUrl),
+            child: Image.network(gameList.state.gamesOnline[index].imageUrl),
           ),
           Text(
-            gameList.state.games[index].name,
+            gameList.state.gamesOnline[index].name,
           ),
           Text(
-            "${gameList.state.games[index].peopleInGame} игроков",
+            "${gameList.state.gamesOnline[index].peopleInGame} игроков",
           ),
           Text(
-            "${gameList.state.games[index].category}",
+            "${gameList.state.gamesOnline[index].category}",
           ),
         ],
       ),
