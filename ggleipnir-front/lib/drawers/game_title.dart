@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:ggleipnir_front/constants/test_style.dart';
 import 'package:ggleipnir_front/controllers/game_repository_controller.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 
@@ -12,7 +14,7 @@ class GameTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gameList = context.watch<GameRepositoryController>();
+    final gameList = context.read<GameRepositoryController>();
 
     return InkWell(
       onTap: () {
@@ -23,21 +25,33 @@ class GameTitle extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Image.network(gameList.state.followedGames[index].imageUrl),
+            ClipOval(
+              child: CachedNetworkImage(
+                imageUrl: gameList.state.followedGames[index].imageUrl,
+                width: 30,
+                height: 30,
+                fit: BoxFit.fill,
+              ),
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   gameList.state.followedGames[index].name,
+                  style: TestStyle.commonStyle,
                 ),
                 Text(
                   "${gameList.state.followedGames[index].category}",
+                  style: TestStyle.commonStyle,
                 ),
               ],
             ),
-            Text(
-              "${gameList.state.followedGames[index].peopleInGame} игроков",
+            Expanded(
+              child: Text(
+                "${gameList.state.followedGames[index].peopleInGame}",
+                style: TestStyle.commonStyle,
+                textAlign: TextAlign.end,
+              ),
             ),
           ],
         ),

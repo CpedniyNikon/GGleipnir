@@ -10,7 +10,8 @@ class GameRepositoryController extends Cubit<GameRepository> {
   final String baseUrl = 'http://localhost:8080';
   GameRepositoryController(super.initialState);
 
-  void followGame(GameModel gameModel) => emit(state.addEntry(gameModel, GameType.followed));
+  void followGame(GameModel gameModel) => emit(
+  state.copyWith(gamesOnline: state.gamesOnline, followedGames: state.followedGames..add(gameModel)));
 
   void getGameList() async {
     emit(state.copyWith(gamesOnline: [], followedGames: []));

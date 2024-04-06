@@ -28,6 +28,4 @@ class _UnAuthorizedAppBarState extends State<UnAuthorizedAppBar> {
       backgroundColor: Colors.green,
     );
   }
-
-
 }

@@ -1,3 +1,4 @@
+import 'package:dimension/dimension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ggleipnir_front/app_bars/authorized_app_bar.dart';
@@ -26,14 +27,27 @@ class _HomePageState extends State<HomePage> {
         appBar: GlobalVariables.isAuthorized
             ? const AuthorizedAppBar()
             : const UnAuthorizedAppBar() as PreferredSizeWidget,
-        drawer: const FollowedGameDrawer(),
-        body: const SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                GameListWidget(),
-              ],
-            ),
+        body: SafeArea(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AnimatedContainer(
+                duration: const Duration(microseconds: 300),
+                width: 19.toVWLength.toPX(screenSize: MediaQuery.of(context).size),
+                child: const FollowedGameDrawer(),
+              ),
+              DimensionSizedBox(
+                width: 81.toVWLength,
+                child: const SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      GameListWidget(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
