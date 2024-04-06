@@ -9,23 +9,18 @@ class GameListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GameRepositoryController, GameRepository>(
-      builder: (context, state) {
-        return GridView.builder(
-          shrinkWrap: true,
-          itemCount: state.gamesOnline.length,
-          itemBuilder: (BuildContext context, int index) {
-            return GameWidget(index: index);
-          },
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: MediaQuery
-                .of(context)
-                .size
-                .width ~/ 200,
-            childAspectRatio: 200 / 300,
-          ),
-        );
+    final gameList = context.read<GameRepositoryController>();
+
+    return GridView.builder(
+      shrinkWrap: true,
+      itemCount: gameList.state.gamesOnline.length,
+      itemBuilder: (BuildContext context, int index) {
+        return GameWidget(index: index);
       },
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: MediaQuery.of(context).size.width ~/ 200,
+        childAspectRatio: 200 / 300,
+      ),
     );
   }
 }

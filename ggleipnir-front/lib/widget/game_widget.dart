@@ -12,12 +12,14 @@ class GameWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gameList = context.watch<GameRepositoryController>();
+    final gameList = context.read<GameRepositoryController>();
 
     return InkWell(
       onTap: () {
-        gameList.state.followedGames.add(gameList.state.gamesOnline[index]);
-        debugPrint('${gameList.state.followedGames.length}');
+        var list = gameList.state.followedGames;
+        if(!list.contains(gameList.state.gamesOnline[index])) {
+          list.add(gameList.state.gamesOnline[index]);
+        }
         Get.toNamed(Routes.gameLobbies,
             parameters: {'gameName': gameList.state.gamesOnline[index].name});
       },

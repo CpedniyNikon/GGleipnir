@@ -9,14 +9,13 @@ class FollowedGameDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GameRepositoryController, GameRepository>(
-      builder: (context, state) => Drawer(
-        child: ListView.builder(
-          itemCount: state.followedGames.length,
-          itemBuilder: (BuildContext context, int index) {
-            return GameTitle(index: index);
-          },
-        ),
+    final gameList = context.read<GameRepositoryController>();
+    return Drawer(
+      child: ListView.builder(
+        itemCount: gameList.state.followedGames.length,
+        itemBuilder: (BuildContext context, int index) {
+          return GameTitle(index: index);
+        },
       ),
     );
   }

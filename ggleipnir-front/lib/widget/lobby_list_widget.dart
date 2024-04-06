@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:ggleipnir_front/controllers/lobby_repository_controller.dart';
-import 'package:ggleipnir_front/models/lobby_model.dart';
 import 'package:ggleipnir_front/repositories/lobby_repository.dart';
 import 'package:ggleipnir_front/widget/lobby_widget.dart';
 
