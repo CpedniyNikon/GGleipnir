@@ -9,7 +9,7 @@ class GameListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gameList = context.read<GameRepositoryController>();
+    final gameList = context.watch<GameRepositoryController>();
 
     return GridView.builder(
       shrinkWrap: true,
