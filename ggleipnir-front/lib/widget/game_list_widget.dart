@@ -19,7 +19,9 @@ class GameListWidget extends StatelessWidget {
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: MediaQuery.of(context).size.width ~/ 200,
-        childAspectRatio: 200 / 300,
+        childAspectRatio: 200 / 340,
+        mainAxisSpacing: 20,
+        crossAxisSpacing: 20,
       ),
     );
   }

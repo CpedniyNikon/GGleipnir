@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:ggleipnir_front/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/game_repository_controller.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 
@@ -17,7 +19,7 @@ class GameWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         var list = gameList.state.followedGames;
-        if(!list.contains(gameList.state.gamesOnline[index])) {
+        if (!list.contains(gameList.state.gamesOnline[index])) {
           gameList.followGame(gameList.state.gamesOnline[index]);
         }
         Get.toNamed(Routes.gameLobbies,
@@ -26,17 +28,22 @@ class GameWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Image.network(gameList.state.gamesOnline[index].imageUrl),
-          ),
+          Image.network(gameList.state.gamesOnline[index].imageUrl),
           Text(
             gameList.state.gamesOnline[index].name,
+            style: GGTextStyle.commonStyle,
           ),
           Text(
+            style: GGTextStyle.commonStyle,
             "${gameList.state.gamesOnline[index].peopleInGame} игроков",
           ),
-          Text(
-            "${gameList.state.gamesOnline[index].category}",
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Text(
+              maxLines: 1,
+              style: GGTextStyle.commonStyle,
+              "${gameList.state.gamesOnline[index].category}",
+            ),
           ),
         ],
       ),

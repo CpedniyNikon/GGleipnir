@@ -1,8 +1,9 @@
 import 'package:dimension/dimension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ggleipnir_front/app_bars/authorized_app_bar.dart';
-import 'package:ggleipnir_front/app_bars/unauthorized_app_bar.dart';
+import 'package:ggleipnir_front/appbars/authorized_appbar.dart';
+import 'package:ggleipnir_front/appbars/unauthorized_appbar.dart';
+import 'package:ggleipnir_front/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/game_repository_controller.dart';
 import 'package:ggleipnir_front/drawers/followed_games.dart';
 import 'package:ggleipnir_front/globals/global_variables.dart';
@@ -34,16 +35,26 @@ class _HomePageState extends State<HomePage> {
             children: [
               AnimatedContainer(
                 duration: const Duration(microseconds: 300),
-                width: 19.toVWLength.toPX(screenSize: MediaQuery.of(context).size),
+                width: 20.toVWLength.toPX(screenSize: MediaQuery.of(context).size),
                 child: const FollowedGameDrawer(),
               ),
+              const VerticalDivider(
+                width: 0,
+              ),
               DimensionSizedBox(
-                width: 81.toVWLength,
-                child: const SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      GameListWidget(),
-                    ],
+                width: 80.toVWLength,
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Просмотр',
+                          style: GGTextStyle.mainHeaderStyle,
+                        ),
+                        GameListWidget(),
+                      ],
+                    ),
                   ),
                 ),
               ),

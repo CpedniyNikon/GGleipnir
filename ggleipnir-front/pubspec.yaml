@@ -30,3 +30,8 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  fonts:
+    - family: Roobert
+      fonts:
+        - asset: fonts/Roobert-Regular.ttf

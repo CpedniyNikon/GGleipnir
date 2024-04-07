@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ggleipnir_front/app_bars/authorized_app_bar.dart';
-import 'package:ggleipnir_front/app_bars/unauthorized_app_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:ggleipnir_front/appbars/authorized_appbar.dart';
+import 'package:ggleipnir_front/appbars/unauthorized_appbar.dart';
+import 'package:ggleipnir_front/controllers/lobby_repository_controller.dart';
 import 'package:ggleipnir_front/globals/global_variables.dart';
+import 'package:ggleipnir_front/repositories/lobby_repository.dart';
 import 'package:ggleipnir_front/widget/lobby_list_widget.dart';
 
 class GameLobbiesPage extends StatelessWidget {
@@ -9,16 +14,23 @@ class GameLobbiesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: GlobalVariables.isAuthorized
-          ? const AuthorizedAppBar()
-          : const UnAuthorizedAppBar() as PreferredSizeWidget,
-      body: const SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              LobbyListWidget(),
-            ],
+    return BlocProvider(
+        create: (BuildContext context) => LobbyRepositoryController(
+          LobbyRepository([]),
+        )..getLobbyList(
+          Get.parameters['gameName']!,
+        ),
+      child: Scaffold(
+        appBar: GlobalVariables.isAuthorized
+            ? const AuthorizedAppBar()
+            : const UnAuthorizedAppBar() as PreferredSizeWidget,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                LobbyListWidget(),
+              ],
+            ),
           ),
         ),
       ),

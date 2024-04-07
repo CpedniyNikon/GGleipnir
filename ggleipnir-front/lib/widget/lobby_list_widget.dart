@@ -11,23 +11,14 @@ class LobbyListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => LobbyRepositoryController(
-        LobbyRepository([]),
-      )..getLobbyList(
-          Get.parameters['gameName']!,
-        ),
-      child: BlocBuilder<LobbyRepositoryController, LobbyRepository>(
-        builder: (context, state) {
-          return ListView.builder(
-            shrinkWrap: true,
-            itemCount: state.lobbies.length,
-            itemBuilder: (BuildContext context, int index) {
-              return LobbyWidget(index: index);
-            },
-          );
-        },
-      ),
+    final lobbyList = context.watch<LobbyRepositoryController>();
+
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: lobbyList.state.lobbies.length,
+      itemBuilder: (BuildContext context, int index) {
+        return LobbyWidget(index: index);
+      },
     );
   }
 }

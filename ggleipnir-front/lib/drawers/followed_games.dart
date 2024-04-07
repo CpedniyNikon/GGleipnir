@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ggleipnir_front/constants/test_style.dart';
+import 'package:ggleipnir_front/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/game_repository_controller.dart';
 import 'package:ggleipnir_front/drawers/game_title.dart';
 import 'package:ggleipnir_front/repositories/game_repository.dart';
@@ -15,7 +15,7 @@ class FollowedGameDrawer extends StatelessWidget {
       children: [
         Text(
           'Для вас',
-          style: TestStyle.headerStyle,
+          style: GGTextStyle.headerStyle,
         ),
         Expanded(
           child: ListView.builder(
