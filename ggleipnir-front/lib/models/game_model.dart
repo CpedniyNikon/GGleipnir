@@ -1,10 +1,12 @@
-class GameModel {
-  String name;
-  String imageUrl;
-  int peopleInGame;
-  List<String> category;
+import 'package:equatable/equatable.dart';
 
-  GameModel(this.name, this.imageUrl, this.peopleInGame, this.category);
+class GameModel extends Equatable{
+  final String name;
+  final String imageUrl;
+  final int peopleInGame;
+  final List<String> category;
+
+  const GameModel(this.name, this.imageUrl, this.peopleInGame, this.category);
 
   GameModel.fromJson(Map<String, dynamic> json)
       : name = json['name'],
@@ -19,4 +21,8 @@ class GameModel {
   String toString() {
     return "$name $imageUrl $peopleInGame $category";
   }
+
+  @override
+  List<Object?> get props => [name];
+
 }

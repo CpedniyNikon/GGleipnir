@@ -24,7 +24,6 @@ class GameLobbiesPage extends StatelessWidget {
               duration: const Duration(microseconds: 300),
               width:
                   20.toVWLength.toPX(screenSize: MediaQuery.of(context).size),
-              child: const FollowedGameDrawer(),
             ),
             const VerticalDivider(
               width: 0,
@@ -36,7 +35,6 @@ class GameLobbiesPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      LobbyListWidget(),
                     ],
                   ),
                 ),

@@ -1,6 +1,9 @@
 import 'dart:convert';
 
+import 'package:beamer/beamer.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/models/lobby_model.dart';
@@ -15,9 +18,9 @@ class Controller extends GetxController {
   final gameRepository = Rx<GameRepository>(GameRepository([], []));
   final lobbyRepository = Rx<LobbyRepository>(LobbyRepository([]));
 
+
   void followGame(GameModel gameModel) {
     gameRepository.value.addEntry(gameModel, GameType.followed);
-    debugPrint('${gameRepository.value.followedGames.length}');
   }
 
   Future<void> getGameList() async {

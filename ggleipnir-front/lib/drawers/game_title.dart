@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,9 +10,10 @@ import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 
 class GameTitle extends StatefulWidget {
+  final GlobalKey<BeamerState> beamer;
   final int index;
 
-  const GameTitle({super.key, required this.index});
+  const GameTitle({super.key, required this.index, required this.beamer});
 
   @override
   State<GameTitle> createState() => _GameTitleState();
@@ -26,8 +28,8 @@ class _GameTitleState extends State<GameTitle> {
     return Obx(
         ()=> InkWell(
         onTap: () {
-          Get.toNamed(Routes.gameLobbies,
-              parameters: {'gameName': controller.gameRepository.value.followedGames[widget.index].name});
+          widget.beamer.currentState?.routerDelegate
+              .beamToNamed('${Routes.gameLobbies}/${controller.gameRepository.value.gamesOnline[widget.index].name}');
         },
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,10 +1,12 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/widget/lobby_widget.dart';
 
 class LobbyListWidget extends StatefulWidget {
-  const LobbyListWidget({super.key});
+  final String gameName;
+  const LobbyListWidget({super.key, required this.gameName});
 
   @override
   State<LobbyListWidget> createState() => _LobbyListWidgetState();
@@ -15,8 +17,9 @@ class _LobbyListWidgetState extends State<LobbyListWidget> {
   
   @override
   void initState() {
+
     controller.getLobbyList(
-      Get.parameters['gameName']!,
+      widget.gameName,
     ).then((value) => controller.lobbyRepository.refresh());
     super.initState();
   }
