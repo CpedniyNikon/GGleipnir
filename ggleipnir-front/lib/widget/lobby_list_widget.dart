@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:ggleipnir_front/controllers/lobby_repository_controller.dart';
-import 'package:ggleipnir_front/repositories/lobby_repository.dart';
+import 'package:get/get.dart';
+import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/widget/lobby_widget.dart';
 
-class LobbyListWidget extends StatelessWidget {
+class LobbyListWidget extends StatefulWidget {
   const LobbyListWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final lobbyList = context.watch<LobbyRepositoryController>();
+  State<LobbyListWidget> createState() => _LobbyListWidgetState();
+}
 
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: lobbyList.state.lobbies.length,
-      itemBuilder: (BuildContext context, int index) {
-        return LobbyWidget(index: index);
-      },
+class _LobbyListWidgetState extends State<LobbyListWidget> {
+  Controller controller = Get.find();
+  
+  @override
+  void initState() {
+    controller.getLobbyList(
+      Get.parameters['gameName']!,
+    ).then((value) => controller.lobbyRepository.refresh());
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Obx(
+      ()=> ListView.builder(
+        shrinkWrap: true,
+        itemCount: controller.lobbyRepository.value.lobbies.length,
+        itemBuilder: (BuildContext context, int index) {
+          return LobbyWidget(index: index);
+        },
+      ),
     );
   }
 }
