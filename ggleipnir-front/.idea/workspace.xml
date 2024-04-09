@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc">
+      <change beforePath="$PROJECT_DIR$/lib/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/drawers/followed_games.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/drawers/followed_games.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/drawers/game_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/drawers/game_title.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/game_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/game_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/game_lobbies_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/game_lobbies_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widget/game_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/game_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/game_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widget/lobby_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/lobby_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;searchQuery&quot;: &quot;gdfg\\&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;CpedniyNikon&quot;
+    },
+    {
+      &quot;searchQuery&quot;: &quot;gdfg&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;CpedniyNikon&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6386f380-e458-4ed9-9537-7cd21b4e4bef" />
+        <option name="url" value="https://github.com/CpedniyNikon/GGleipnir.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.6/lib/get_rx/src/rx_types/rx_core/rx_impl.dart" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../../src/flutter/packages/flutter/lib/src/material/drawer.dart" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2cY2UuQHEyfNdHcFK5VRbUvH7IK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-deeplink&quot;: &quot;deeplink&quot;,
+    &quot;Notification.DoNotAsk-deeplink&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/GGleipnir/ggleipnir-front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\repositories" />
+      <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\pages" />
+      <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\models" />
+      <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\controllers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="" />
+      <created>1708274217777</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708274217777</updated>
+      <workItem from="1708274218938" duration="45000" />
+      <workItem from="1708274267388" duration="621000" />
+      <workItem from="1708431695694" duration="746000" />
+      <workItem from="1708718654459" duration="37000" />
+      <workItem from="1708718806395" duration="1705000" />
+      <workItem from="1708736699186" duration="352000" />
+      <workItem from="1708737128200" duration="2308000" />
+      <workItem from="1708809336590" duration="5639000" />
+      <workItem from="1708869493948" duration="3706000" />
+      <workItem from="1708971966220" duration="1272000" />
+      <workItem from="1709150540895" duration="1546000" />
+      <workItem from="1709194472779" duration="1396000" />
+      <workItem from="1709368019407" duration="25000" />
+      <workItem from="1709460651039" duration="1272000" />
+      <workItem from="1709462228637" duration="205000" />
+      <workItem from="1709462454740" duration="5088000" />
+      <workItem from="1709490748656" duration="2385000" />
+      <workItem from="1709813081956" duration="75000" />
+      <workItem from="1710100969001" duration="36000" />
+      <workItem from="1710347482990" duration="15000" />
+      <workItem from="1710347607504" duration="106000" />
+      <workItem from="1710348623903" duration="309000" />
+      <workItem from="1710351004681" duration="1217000" />
+      <workItem from="1710352323717" duration="148000" />
+      <workItem from="1710352489820" duration="56000" />
+      <workItem from="1710352557428" duration="127000" />
+      <workItem from="1710352700447" duration="49000" />
+      <workItem from="1710352762954" duration="70000" />
+      <workItem from="1710353405942" duration="2000" />
+      <workItem from="1710436434830" duration="843000" />
+      <workItem from="1710438855326" duration="902000" />
+      <workItem from="1710439790321" duration="2366000" />
+      <workItem from="1711563727848" duration="3754000" />
+      <workItem from="1711605664661" duration="188000" />
+      <workItem from="1711909582598" duration="1775000" />
+      <workItem from="1712066472672" duration="1225000" />
+      <workItem from="1712067726142" duration="105000" />
+      <workItem from="1712067849921" duration="17000" />
+      <workItem from="1712132922267" duration="14000" />
+      <workItem from="1712421126569" duration="2423000" />
+      <workItem from="1712425951900" duration="4666000" />
+      <workItem from="1712430706622" duration="5712000" />
+      <workItem from="1712446227078" duration="2701000" />
+      <workItem from="1712449005860" duration="2274000" />
+      <workItem from="1712509972734" duration="1567000" />
+      <workItem from="1712515700530" duration="4786000" />
+      <workItem from="1712612795993" duration="1985000" />
+      <workItem from="1712664378283" duration="16440000" />
+    </task>
+    <task id="LOCAL-00001" summary="implemented appbar and room list">
+      <option name="closed" value="true" />
+      <created>1708881721889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708881721889</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changed room list widget">
+      <option name="closed" value="true" />
+      <created>1709462060753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709462060755</updated>
+    </task>
+    <task id="LOCAL-00003" summary="made some shit">
+      <option name="closed" value="true" />
+      <created>1709467588942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709467588942</updated>
+    </task>
+    <task id="LOCAL-00004" summary="made some shit">
+      <option name="closed" value="true" />
+      <created>1709813100486</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709813100486</updated>
+    </task>
+    <task id="LOCAL-00005" summary="переписал говно riverpod на ахуеный bloc">
+      <option name="closed" value="true" />
+      <created>1710442166016</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710442166016</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implemented appbar and room list" />
+    <MESSAGE value="changed room list widget" />
+    <MESSAGE value="made some shit" />
+    <MESSAGE value="переписал говно riverpod на ахуеный bloc" />
+    <option name="LAST_COMMIT_MESSAGE" value="переписал говно riverpod на ахуеный bloc" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
