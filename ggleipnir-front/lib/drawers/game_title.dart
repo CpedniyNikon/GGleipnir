@@ -10,10 +10,9 @@ import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 
 class GameTitle extends StatefulWidget {
-  final GlobalKey<BeamerState> beamer;
   final int index;
 
-  const GameTitle({super.key, required this.index, required this.beamer});
+  const GameTitle({super.key, required this.index});
 
   @override
   State<GameTitle> createState() => _GameTitleState();
@@ -28,7 +27,7 @@ class _GameTitleState extends State<GameTitle> {
     return Obx(
         ()=> InkWell(
         onTap: () {
-          widget.beamer.currentState?.routerDelegate
+          controller.beamer.currentState?.routerDelegate
               .beamToNamed('${Routes.gameLobbies}/${controller.gameRepository.value.gamesOnline[widget.index].name}');
         },
         child: Row(

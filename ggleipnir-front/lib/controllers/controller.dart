@@ -17,10 +17,17 @@ class Controller extends GetxController {
 
   final gameRepository = Rx<GameRepository>(GameRepository([], []));
   final lobbyRepository = Rx<LobbyRepository>(LobbyRepository([]));
+  late GlobalKey<BeamerState> beamer;
 
+  @override
+  void onInit() {
+    getGameList();
+    super.onInit();
+  }
 
   void followGame(GameModel gameModel) {
     gameRepository.value.addEntry(gameModel, GameType.followed);
+    gameRepository.refresh();
   }
 
   Future<void> getGameList() async {
@@ -38,6 +45,7 @@ class Controller extends GetxController {
     } else {
       throw Exception('Failed to load data');
     }
+    gameRepository.refresh();
     debugPrint('game list received');
   }
 
@@ -56,6 +64,7 @@ class Controller extends GetxController {
     } else {
       throw Exception('Failed to load data');
     }
+    lobbyRepository.refresh();
     debugPrint('lobby list received');
   }
 }
