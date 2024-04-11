@@ -1,11 +1,7 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:ggleipnir_front/constants/text_style.dart';
+import 'package:ggleipnir_front/globals/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
-import 'package:ggleipnir_front/pages/home_page/home_page.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 
 class GameWidget extends StatefulWidget {

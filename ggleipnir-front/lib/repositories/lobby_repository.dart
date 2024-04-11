@@ -1,4 +1,3 @@
-
 import 'package:ggleipnir_front/models/lobby_model.dart';
 
 class LobbyRepository {

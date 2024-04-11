@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/appbars/authorized_appbar.dart';
 import 'package:ggleipnir_front/appbars/unauthorized_appbar.dart';
-import 'package:ggleipnir_front/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/drawers/navigation_side.dart';
 import 'package:ggleipnir_front/globals/global_variables.dart';
-import 'package:ggleipnir_front/pages/home_page/router_delegate.dart';
 import 'package:ggleipnir_front/widget/game_list_widget.dart';
 import 'package:ggleipnir_front/widget/lobby_list_widget.dart';
 
@@ -52,7 +50,23 @@ class _HomePageState extends State<HomePage> {
               width: 80.toVWLength,
               child: Beamer(
                 key: controller.beamer,
-                routerDelegate: routerDelegate,
+                routerDelegate: BeamerDelegate(
+                  locationBuilder: RoutesLocationBuilder(
+                    routes: {
+                      '/game_lobbies': (context, state, data) => BeamPage(
+                            key: ValueKey('game_lobbies - ${DateTime.now()}'),
+                            type: BeamPageType.scaleTransition,
+                            child: LobbyListWidget(
+                                gameName: state.pathPatternSegments[1]),
+                          ),
+                      '*': (context, state, data) => BeamPage(
+                        key: ValueKey('games - ${DateTime.now()}'),
+                        type: BeamPageType.scaleTransition,
+                        child: const GameListWidget(),
+                      ),
+                    },
+                  ),
+                ),
               ),
             ),
           ],

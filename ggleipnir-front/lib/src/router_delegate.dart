@@ -18,7 +18,6 @@ class HomeLocation extends BeamLocation<BeamState> {
   List<Pattern> get pathPatterns => ['/*'];
 }
 
-
 final routerDelegate = BeamerDelegate(
   transitionDelegate: const NoAnimationTransitionDelegate(),
   locationBuilder: (routeInformation, _) => HomeLocation(routeInformation),

@@ -1,11 +1,7 @@
-import 'package:beamer/beamer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:ggleipnir_front/constants/text_style.dart';
+import 'package:ggleipnir_front/globals/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 

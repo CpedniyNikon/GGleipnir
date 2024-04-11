@@ -1,6 +1,6 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ggleipnir_front/globals/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/widget/lobby_widget.dart';
 
@@ -28,13 +28,26 @@ class _LobbyListWidgetState extends State<LobbyListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => ListView.builder(
-        shrinkWrap: true,
-        itemCount: controller.lobbyRepository.value.lobbies.length,
-        itemBuilder: (BuildContext context, int index) {
-          return LobbyWidget(index: index);
-        },
+    return Padding(
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
+      child: SingleChildScrollView(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Text(
+            'Просмотр',
+            style: GGTextStyle.mainHeaderStyle,
+          ),
+          Obx(
+            () => ListView.builder(
+              shrinkWrap: true,
+              itemCount: controller.lobbyRepository.value.lobbies.length,
+              itemBuilder: (BuildContext context, int index) {
+                return LobbyWidget(index: index);
+              },
+            ),
+          ),
+        ]),
       ),
     );
   }
