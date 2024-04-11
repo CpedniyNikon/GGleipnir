@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ggleipnir_front/globals/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
+import 'package:ggleipnir_front/globals/constants/gg_typography.dart';
 import 'package:ggleipnir_front/widget/game_widget.dart';
 
 class GameListWidget extends StatefulWidget {
@@ -18,7 +18,7 @@ class _GameListWidgetState extends State<GameListWidget> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(
-        8.0,
+        32
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -26,7 +26,7 @@ class _GameListWidgetState extends State<GameListWidget> {
           children: [
             const Text(
               'Просмотр',
-              style: GGTextStyle.mainHeaderStyle,
+              style: GGTypography.mainHeaderStyle,
             ),
             Obx(
               () => controller.gameRepository.value.gamesOnline != []

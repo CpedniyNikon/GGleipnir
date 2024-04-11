@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ggleipnir_front/globals/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
+import 'package:ggleipnir_front/globals/constants/gg_typography.dart';
 import 'package:ggleipnir_front/routes/routes.dart';
 
 class GameWidget extends StatefulWidget {
@@ -36,17 +36,17 @@ class _GameWidgetState extends State<GameWidget> {
                 .gameRepository.value.gamesOnline[widget.index].imageUrl),
             Text(
               controller.gameRepository.value.gamesOnline[widget.index].name,
-              style: GGTextStyle.commonStyle,
+              style: GGTypography.commonStyle,
             ),
             Text(
-              style: GGTextStyle.commonStyle,
+              style: GGTypography.commonStyle,
               "${controller.gameRepository.value.gamesOnline[widget.index].peopleInGame} игроков",
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Text(
                 maxLines: 1,
-                style: GGTextStyle.commonStyle,
+                style: GGTypography.commonStyle,
                 "${controller.gameRepository.value.gamesOnline[widget.index].category}",
               ),
             ),

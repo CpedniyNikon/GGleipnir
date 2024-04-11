@@ -5,8 +5,6 @@ import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/src/router_delegate.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-
-
 void main() {
   setPathUrlStrategy();
 

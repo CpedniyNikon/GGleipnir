@@ -5,30 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc">
+      <change afterPath="$PROJECT_DIR$/lib/appbars/authorized_actions.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/appbars/ggappbar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/appbars/unauthorized_actions.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/globals/constants/gg_typography.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/JumpListIconsMostVisited/2ce03b30-cdc8-4e7e-8c74-c2c4bf739577.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/JumpListIconsMostVisited/2ce03b30-cdc8-4e7e-8c74-c2c4bf739577.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/MANIFEST-000001" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Local Storage/leveldb/MANIFEST-000001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/461dc019dabf5ffbda3bd375e1b1771f.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/461dc019dabf5ffbda3bd375e1b1771f.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/globals/constants/text_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/appbars/authorized_appbar.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/appbars/unauthorized_appbar.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/drawers/game_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/drawers/game_title.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/drawers/navigation_side.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/drawers/navigation_side.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/globals/constants/text_style.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home_page/router_delegate.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/lobby_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/lobby_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/router_delegate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/router_delegate.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widget/game_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/game_list_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/game_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widget/lobby_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/lobby_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widget/lobby_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/lobby_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +176,9 @@
       <workItem from="1712515700530" duration="4786000" />
       <workItem from="1712612795993" duration="1985000" />
       <workItem from="1712664378283" duration="16777000" />
-      <workItem from="1712831392006" duration="3980000" />
+      <workItem from="1712831392006" duration="5298000" />
+      <workItem from="1712836746040" duration="1677000" />
+      <workItem from="1712839060666" duration="4230000" />
     </task>
     <task id="LOCAL-00001" summary="implemented appbar and room list">
       <option name="closed" value="true" />

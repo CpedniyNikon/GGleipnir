@@ -1,9 +1,11 @@
 import 'package:beamer/beamer.dart';
 import 'package:dimension/dimension.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:ggleipnir_front/appbars/authorized_appbar.dart';
-import 'package:ggleipnir_front/appbars/unauthorized_appbar.dart';
+import 'package:ggleipnir_front/appbars/ggappbar.dart';
+import 'package:ggleipnir_front/appbars/unauthorized_actions.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/drawers/navigation_side.dart';
 import 'package:ggleipnir_front/globals/global_variables.dart';
@@ -29,28 +31,27 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: GlobalVariables.isAuthorized
-          ? const AuthorizedAppBar()
-          : const UnAuthorizedAppBar() as PreferredSizeWidget,
+      appBar: const GGAppBar(),
       body: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AnimatedContainer(
-              duration: const Duration(microseconds: 300),
-              width:
-                  20.toVWLength.toPX(screenSize: MediaQuery.of(context).size),
-              child: const NavigationSide(),
+            Expanded(
+              child: AnimatedContainer(
+                duration: const Duration(microseconds: 300),
+                child: const NavigationSide(),
+              ),
             ),
             const VerticalDivider(
               width: 0,
             ),
-            DimensionSizedBox(
-              width: 80.toVWLength,
+            Expanded(
+              flex: 4,
               child: Beamer(
                 key: controller.beamer,
                 routerDelegate: BeamerDelegate(
+                  transitionDelegate: const NoAnimationTransitionDelegate(),
                   locationBuilder: RoutesLocationBuilder(
                     routes: {
                       '/game_lobbies': (context, state, data) => BeamPage(

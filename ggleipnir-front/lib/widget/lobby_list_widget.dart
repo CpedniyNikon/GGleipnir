@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ggleipnir_front/globals/constants/text_style.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
+import 'package:ggleipnir_front/globals/constants/gg_typography.dart';
 import 'package:ggleipnir_front/widget/lobby_widget.dart';
 
 class LobbyListWidget extends StatefulWidget {
@@ -30,14 +30,10 @@ class _LobbyListWidgetState extends State<LobbyListWidget> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(
-        8.0,
+        32,
       ),
       child: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text(
-            'Просмотр',
-            style: GGTextStyle.mainHeaderStyle,
-          ),
           Obx(
             () => ListView.builder(
               shrinkWrap: true,
