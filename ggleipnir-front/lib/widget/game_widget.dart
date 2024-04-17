@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
@@ -32,8 +33,10 @@ class _GameWidgetState extends State<GameWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(controller
-                .gameRepository.value.gamesOnline[widget.index].imageUrl),
+            Expanded(
+              child: Image.network(controller
+                  .gameRepository.value.gamesOnline[widget.index].imageUrl),
+            ),
             Text(
               controller.gameRepository.value.gamesOnline[widget.index].name,
               style: GGTypography.commonStyle,

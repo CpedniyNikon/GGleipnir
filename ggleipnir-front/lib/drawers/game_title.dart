@@ -25,41 +25,52 @@ class _GameTitleState extends State<GameTitle> {
         controller.beamer.currentState?.routerDelegate
             .beamToNamed('${Routes.gameLobbies}/${widget.model.name}');
       },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipOval(
-              child: CachedNetworkImage(
-                imageUrl: widget.model.imageUrl,
-                width: 30,
-                height: 30,
-                fit: BoxFit.fill,
-              ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.model.name,
-                  style: GGTypography.commonStyle,
+      child: Obx(
+        () => controller.toggle.value
+            ? ClipOval(
+                child: CachedNetworkImage(
+                  imageUrl: widget.model.imageUrl,
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.fill,
                 ),
-                Text(
-                  "${widget.model.category}",
-                  style: GGTypography.commonStyle,
+              )
+            : Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipOval(
+                      child: CachedNetworkImage(
+                        imageUrl: widget.model.imageUrl,
+                        width: 30,
+                        height: 30,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.model.name,
+                          style: GGTypography.commonStyle,
+                        ),
+                        Text(
+                          "${widget.model.category}",
+                          style: GGTypography.commonStyle,
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: Text(
+                        "${widget.model.peopleInGame}",
+                        style: GGTypography.commonStyle,
+                        textAlign: TextAlign.end,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
             ),
-            Expanded(
-              child: Text(
-                "${widget.model.peopleInGame}",
-                style: GGTypography.commonStyle,
-                textAlign: TextAlign.end,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

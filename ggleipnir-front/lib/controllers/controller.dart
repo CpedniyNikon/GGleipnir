@@ -16,6 +16,7 @@ class Controller extends GetxController {
   final gameRepository = Rx<GameRepository>(GameRepository([], []));
   final lobbyRepository = Rx<LobbyRepository>(LobbyRepository([]));
   late GlobalKey<BeamerState> beamer;
+  final toggle = Rx<bool>(false);
 
   @override
   void onInit() {

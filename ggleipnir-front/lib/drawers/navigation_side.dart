@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/controllers/controller.dart';
 import 'package:ggleipnir_front/drawers/game_title.dart';
@@ -17,46 +18,82 @@ class _FollowedGameDrawerState extends State<NavigationSide> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const ListTile(
-              title: Text(
-                'Для вас',
-                style: GGTypography.header1,
-              ),
-              trailing: Icon(Icons.arrow_back),
-            ),
-            const ListTile(
-              title: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Отслеживаемые',
-                    style: GGTypography.header2,
+      () => SizedBox(
+        width: !controller.toggle.value
+            ? MediaQuery.of(context).size.width * 0.2
+            : 50,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              !controller.toggle.value
+                  ? ListTile(
+                      title: const Text(
+                        'Для вас',
+                        style: GGTypography.header1,
+                      ),
+                      trailing: InkWell(
+                        child: const Icon(Icons.arrow_back),
+                        onTap: () {
+                          controller.toggle.value = !controller.toggle.value;
+                        },
+                      ),
+                    )
+                  : Padding(
+                    padding: const EdgeInsets.only(top: 16, bottom: 8),
+                    child: InkWell(
+                      onTap: () {
+                          controller.toggle.value = !controller.toggle.value;
+                        },
+                      child: const Icon(Icons.arrow_back),
+                    ),
                   ),
-                  Text(
-                    'игры',
-                    style: GGTypography.header2,
+              !controller.toggle.value
+                  ? const ListTile(
+                      title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Отслеживаемые',
+                            style: GGTypography.header2,
+                          ),
+                          Text(
+                            'игры',
+                            style: GGTypography.header2,
+                          ),
+                        ],
+                      ),
+                      trailing: Icon(Icons.add_chart),
+                    )
+                  : Padding(
+                    padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    child: SvgPicture.asset('graphics/heart.svg',fit: BoxFit.fill),
                   ),
-                ],
+              ...controller.gameRepository.value.followedGames.map(
+                (game) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: GameTitle(model: game),
+                  );
+                },
               ),
-              trailing: Icon(Icons.add_chart),
-            ),
-            ...controller.gameRepository.value.followedGames.map(
-              (game) {
-                return GameTitle(model: game);
-              },
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                'Рекомендуемые игры',
-                style: GGTypography.header1,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: !controller.toggle.value
+                    ? const Align(
+                  alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        child: Text(
+                            'Рекомендуемые игры',
+                            style: GGTypography.header1,
+                          ),
+                      ),
+                    )
+                    : const Icon(Icons.camera_alt),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
