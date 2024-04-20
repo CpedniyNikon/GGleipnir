@@ -37,17 +37,11 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: AnimatedContainer(
-                duration: const Duration(microseconds: 300),
-                child: const NavigationSide(),
-              ),
-            ),
+            const NavigationSide(),
             const VerticalDivider(
               width: 0,
             ),
             Expanded(
-              flex: 4,
               child: Beamer(
                 key: controller.beamer,
                 routerDelegate: BeamerDelegate(
@@ -61,10 +55,10 @@ class _HomePageState extends State<HomePage> {
                                 gameName: state.pathPatternSegments[1]),
                           ),
                       '*': (context, state, data) => BeamPage(
-                        key: ValueKey('games - ${DateTime.now()}'),
-                        type: BeamPageType.scaleTransition,
-                        child: const GameListWidget(),
-                      ),
+                            key: ValueKey('games - ${DateTime.now()}'),
+                            type: BeamPageType.scaleTransition,
+                            child: const GameListWidget(),
+                          ),
                     },
                   ),
                 ),
