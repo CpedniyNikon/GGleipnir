@@ -1,19 +1,23 @@
 services:
   core:
-    container_name: 'core'
-    build: /ggleipnir-back/core
+    container_name: core
+    build: ggleipnir-back/core
     ports:
-      - "8080:8080"
+      - '8080:8080'
     restart: always
+    depends_on:
+      - liquibase
+    networks:
+      - common
 
   media:
-    container_name: 'media'
-    build: /ggleipnir-back/media
+    container_name: media
+    build: ggleipnir-back/media
     ports:
-      - "8090:8090"
+      - '8090:8090'
     restart: always
     networks:
-      - minio_net
+      - common
 
   minio:
     image: quay.io/minio/minio
@@ -21,15 +25,42 @@ services:
     command: server /data --console-address ":9090"
     restart: always
     ports:
-      - 9000:9000
-      - 9090:9090
+      - '9000:9000'
+      - '9090:9090'
     volumes:
       - ~/minio/data:/data
     environment:
       - MINIO_ROOT_USER=admin
       - MINIO_ROOT_PASSWORD=Secure123$
     networks:
-      - minio_net
+      - common
 
+  postgrya:
+    image: postgres
+    environment:
+        POSTGRES_DB: database
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgrya_volume:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    networks:
+      - common
+
+  liquibase:
+    image: liquibase/liquibase:4.9.1
+    container_name: liquibase_container
+    depends_on:
+      - postgrya
+    volumes:
+      - ./liquibase/changelog:/liquibase/changelog
+    command: --defaults-file=/liquibase/changelog/liquibase.properties update
+    networks:
+      - common
+
+volumes:
+  postgrya_volume:
 networks:
-  minio_net:
+  common:
