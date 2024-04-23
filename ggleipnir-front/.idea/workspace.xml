@@ -5,48 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc">
-      <change afterPath="$PROJECT_DIR$/graphics/heart.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsState" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsState" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/History-journal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsSiteData" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsSiteData" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/2086cb858220314c8e1ac57a62a2d71f.cache.dill.track.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/273d9e3853c79aadf42b2c667837b025.cache.dill.track.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/461dc019dabf5ffbda3bd375e1b1771f.cache.dill.track.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/7fc5799d91bdab2fa863bfa7f4f1c067/_composite.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/7fc5799d91bdab2fa863bfa7f4f1c067/gen_dart_plugin_registrant.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/7fc5799d91bdab2fa863bfa7f4f1c067/gen_localizations.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cea7f40ce51b30682deb69acbb34235b/_composite.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cea7f40ce51b30682deb69acbb34235b/gen_dart_plugin_registrant.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cea7f40ce51b30682deb69acbb34235b/gen_localizations.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/d0fba9d69bbb661a03572ff4dd941e4b.cache.dill.track.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/dd704641fca0f13458e044aee43be5d8.cache.dill.track.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/FontManifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/fonts/MaterialIcons-Regular.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/fonts/Roobert-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/flutter_assets/shaders/ink_sparkle.frag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/last_build_run.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/drawers/game_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/drawers/game_title.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/drawers/navigation_side.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/drawers/navigation_side.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/game_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ggleipnir_front.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ggleipnir_front.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/controllers/controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/ggappbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/ggappbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/unauthorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/unauthorized_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Dart File" />
       </list>
     </option>
@@ -105,34 +79,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-deeplink": "deeplink",
-    "Notification.DoNotAsk-deeplink": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/dev/GGleipnir/ggleipnir-front/graphics",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-deeplink&quot;: &quot;deeplink&quot;,
+    &quot;Notification.DoNotAsk-deeplink&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/GGleipnir/ggleipnir-front/lib/pages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\pages" />
       <recent name="C:\dev\GGleipnir\ggleipnir-front\graphics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -142,6 +117,13 @@
       <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\repositories" />
       <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\pages" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-15.0.2-corretto-15.0.2-f644763e9732-61b2c15e" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -204,6 +186,11 @@
       <workItem from="1712839060666" duration="4230000" />
       <workItem from="1713309547807" duration="2423000" />
       <workItem from="1713384093021" duration="2779000" />
+      <workItem from="1713815817575" duration="555000" />
+      <workItem from="1713899990042" duration="1612000" />
+      <workItem from="1713902307001" duration="164000" />
+      <workItem from="1713902487408" duration="2593000" />
+      <workItem from="1713908125102" duration="3232000" />
     </task>
     <task id="LOCAL-00001" summary="implemented appbar and room list">
       <option name="closed" value="true" />

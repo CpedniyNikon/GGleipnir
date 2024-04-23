@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/models/lobby_model.dart';
+import 'package:ggleipnir_front/core/models/user_model.dart';
 import 'package:ggleipnir_front/core/repositories/game_repository.dart';
 import 'package:ggleipnir_front/core/models/game_model.dart';
 import 'package:ggleipnir_front/core/repositories/lobby_repository.dart';
@@ -15,8 +16,10 @@ class Controller extends GetxController {
 
   final gameRepository = Rx<GameRepository>(GameRepository([], []));
   final lobbyRepository = Rx<LobbyRepository>(LobbyRepository([]));
+  final user = Rx<UserModel>(const UserModel('', '', '', '', ''));
   late GlobalKey<BeamerState> beamer;
   final toggle = Rx<bool>(false);
+  final isAuthorized = Rx<bool>(false);
 
   @override
   void onInit() {
@@ -65,5 +68,50 @@ class Controller extends GetxController {
     }
     lobbyRepository.refresh();
     debugPrint('lobby list received');
+  }
+
+  Future<void> login(String login, String password) async {
+    final response = await http.post(Uri.parse('$baseUrl/v1/login'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'login': login,
+          'password': password,
+        }));
+
+    if (response.statusCode == 200) {
+      final UserModel data = UserModel.fromJson(json.decode(response.body));
+      debugPrint(data.toString());
+
+      user.value = data;
+      isAuthorized.value = true;
+      debugPrint(user.value.id);
+    } else {
+      throw Exception('Failed to load data');
+    }
+    user.refresh();
+    debugPrint('user data received');
+  }
+
+  Future<void> register(
+      String login, String password, String name, String meta) async {
+    final response = await http.post(Uri.parse('$baseUrl/v1/register'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'login': login,
+          'password': password,
+          'name': name,
+          'meta': meta,
+        }));
+
+    if (response.statusCode == 200) {
+      debugPrint('${response.statusCode}');
+    } else {
+      throw Exception('Failed to load data');
+    }
+    debugPrint('registration completed');
   }
 }

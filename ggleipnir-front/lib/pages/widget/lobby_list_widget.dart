@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
-import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';
 import 'package:ggleipnir_front/pages/widget/lobby_widget.dart';
 
 class LobbyListWidget extends StatefulWidget {
