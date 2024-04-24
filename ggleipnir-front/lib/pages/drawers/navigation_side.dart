@@ -18,7 +18,9 @@ class _FollowedGameDrawerState extends State<NavigationSide> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => SizedBox(
+      () => Container(
+        color: const Color(0xFFEFEFF1),
+        height: MediaQuery.of(context).size.height,
         width: !controller.toggle.value
             ? MediaQuery.of(context).size.width * 0.2
             : 50,

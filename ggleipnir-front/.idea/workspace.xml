@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc">
-      <change afterPath="$PROJECT_DIR$/lib/core/models/user_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsSiteData" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsSiteData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ggleipnir_front.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ggleipnir_front.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/controllers/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/models/game_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/models/game_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/appbars/ggappbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/ggappbar.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/appbars/unauthorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/unauthorized_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/drawers/navigation_side.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/drawers/navigation_side.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +182,8 @@
       <workItem from="1713899990042" duration="1612000" />
       <workItem from="1713902307001" duration="164000" />
       <workItem from="1713902487408" duration="2593000" />
-      <workItem from="1713908125102" duration="3232000" />
+      <workItem from="1713908125102" duration="3585000" />
+      <workItem from="1713963172339" duration="5537000" />
     </task>
     <task id="LOCAL-00001" summary="implemented appbar and room list">
       <option name="closed" value="true" />

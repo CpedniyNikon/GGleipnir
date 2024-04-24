@@ -21,6 +21,10 @@ class _GGAppBarState extends State<GGAppBar> {
   Widget build(BuildContext context) {
     return Obx(
       () => AppBar(
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1),
+          child: Divider(height: 1),
+        ),
         leading: IconButton(
           onPressed: () {
             controller.beamer.currentState?.routerDelegate.beamToNamed('/');
@@ -31,7 +35,6 @@ class _GGAppBarState extends State<GGAppBar> {
         actions: controller.isAuthorized.value
             ? authorizedActions()
             : unAuthorizedActions(context),
-        backgroundColor: Colors.black38,
       ),
     );
   }

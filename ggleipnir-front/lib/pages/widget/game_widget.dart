@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';
@@ -32,24 +34,36 @@ class _GameWidgetState extends State<GameWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Image.network(controller
-                  .gameRepository.value.gamesOnline[widget.index].imageUrl),
-            ),
+            Image.network(controller
+                .gameRepository.value.gamesOnline[widget.index].imageUrl,
+            width: 200,),
             Text(
               controller.gameRepository.value.gamesOnline[widget.index].name,
               style: GGTypography.commonStyle,
             ),
             Text(
               style: GGTypography.commonStyle,
-              "${controller.gameRepository.value.gamesOnline[widget.index].peopleInGame} игроков",
+              """
+${controller.gameRepository.value.gamesOnline[widget.index].peopleInGame} игроков""",
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Text(
-                maxLines: 1,
-                style: GGTypography.commonStyle,
-                "${controller.gameRepository.value.gamesOnline[widget.index].category}",
+            Expanded(
+              child: ListView.separated(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 2,
+                itemBuilder: (BuildContext context, int index) => Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 3),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    controller
+                        .gameRepository.value.gamesOnline[widget.index].category
+                        .sublist(0, 2)[index],
+                    style: GGTypography.commonStyle.apply(),
+                  ),
+                ), separatorBuilder: (BuildContext context, int index) => SizedBox(width: 5,),
               ),
             ),
           ],

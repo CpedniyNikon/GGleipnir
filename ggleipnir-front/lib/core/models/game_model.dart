@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+
 class GameModel extends Equatable{
   final String name;
   final String imageUrl;
