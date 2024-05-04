@@ -17,11 +17,9 @@ class _LobbyListWidgetState extends State<LobbyListWidget> {
 
   @override
   void initState() {
-    controller
-        .getLobbyList(
-          widget.gameName,
-        )
-        .then((value) => controller.lobbyRepository.refresh());
+    controller.getLobbyList(
+      widget.gameName,
+    );
     super.initState();
   }
 

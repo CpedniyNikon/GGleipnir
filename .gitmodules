@@ -1,0 +1,3 @@
+[submodule "ggleipnir-back/ggleipnir_media"]
+	path = ggleipnir-back/ggleipnir_media
+	url = https://github.com/CpedniyNikon/ggleipnir_media
