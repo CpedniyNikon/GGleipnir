@@ -19,15 +19,6 @@ services:
     networks:
       - common
 
-  ggleipnir_media:
-    container_name: ggleipnir_media
-    build: ggleipnir-back/ggleipnir_media
-    ports:
-      - '8099:8099'
-    restart: always
-    networks:
-      - common
-
   minio:
     image: quay.io/minio/minio
     container_name: minio_container
