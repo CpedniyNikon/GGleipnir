@@ -28,6 +28,7 @@ class _GameListWidgetState extends State<GameListWidget> {
               'Просмотр',
               style: GGTypography.mainHeaderStyle,
             ),
+            const SizedBox(height: 30,),
             Obx(
               () => controller.gameRepository.value.gamesOnline != []
                   ? GridView.builder(

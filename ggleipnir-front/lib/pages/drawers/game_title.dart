@@ -5,6 +5,7 @@ import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';
 import 'package:ggleipnir_front/core/models/game_model.dart';
 import 'package:ggleipnir_front/src/routes/routes.dart';
+import 'dart:html' as html;
 
 class GameTitle extends StatefulWidget {
   final GameModel model;
@@ -26,7 +27,9 @@ class _GameTitleState extends State<GameTitle> {
             .beamToNamed('${Routes.gameLobbies}/${widget.model.name}');
       },
       child: Obx(
-        () => controller.toggle.value
+        () => controller.toggle.value ||
+            (MediaQuery.of(context).size.width !=
+                html.window.screen?.width?.toDouble())
             ? ClipOval(
                 child: CachedNetworkImage(
                   imageUrl: widget.model.imageUrl,

@@ -20,12 +20,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "bloc",
-      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/bloc-8.1.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "boolean_selector",
       "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -120,12 +114,6 @@
       "rootUri": "file:///C:/src/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.2"
-    },
-    {
-      "name": "flutter_bloc",
-      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "flutter_cache_manager",
@@ -458,7 +446,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-04-22T19:57:31.364959Z",
+  "generated": "2024-05-11T21:04:53.857997Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }

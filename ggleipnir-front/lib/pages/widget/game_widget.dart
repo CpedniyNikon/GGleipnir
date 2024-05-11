@@ -34,17 +34,19 @@ class _GameWidgetState extends State<GameWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(controller
-                .gameRepository.value.gamesOnline[widget.index].imageUrl,
-            width: 200,),
+            Image.network(
+              controller
+                  .gameRepository.value.gamesOnline[widget.index].imageUrl,
+            ),
             Text(
+              maxLines: 1,
               controller.gameRepository.value.gamesOnline[widget.index].name,
               style: GGTypography.commonStyle,
             ),
             Text(
+              maxLines: 1,
               style: GGTypography.commonStyle,
-              """
-${controller.gameRepository.value.gamesOnline[widget.index].peopleInGame} игроков""",
+              """${controller.gameRepository.value.gamesOnline[widget.index].peopleInGame} игроков""",
             ),
             Expanded(
               child: ListView.separated(
@@ -63,7 +65,10 @@ ${controller.gameRepository.value.gamesOnline[widget.index].peopleInGame} игр
                         .sublist(0, 2)[index],
                     style: GGTypography.commonStyle.apply(),
                   ),
-                ), separatorBuilder: (BuildContext context, int index) => SizedBox(width: 5,),
+                ),
+                separatorBuilder: (BuildContext context, int index) => SizedBox(
+                  width: 5,
+                ),
               ),
             ),
           ],

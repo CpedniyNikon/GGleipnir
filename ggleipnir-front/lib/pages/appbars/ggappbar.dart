@@ -25,13 +25,21 @@ class _GGAppBarState extends State<GGAppBar> {
           preferredSize: Size.fromHeight(1),
           child: Divider(height: 1),
         ),
-        leading: IconButton(
-          onPressed: () {
+        title: InkWell(
+          onTap: () {
             controller.beamer.currentState?.routerDelegate.beamToNamed('/');
           },
-          icon: const Icon(Icons.home),
+          child: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.home),
+              SizedBox(
+                width: 20,
+              ),
+              Text('GGleipnir'),
+            ],
+          ),
         ),
-        title: const Text('GGleipnir'),
         actions: controller.isAuthorized.value
             ? authorizedActions()
             : unAuthorizedActions(context),
