@@ -17,15 +17,9 @@ class Controller extends GetxController {
   final gameRepository = Rx<GameRepository>(GameRepository([], []));
   final lobbyRepository = Rx<LobbyRepository>(LobbyRepository([]));
   final user = Rx<UserModel>(const UserModel('', '', '', '', ''));
-  late GlobalKey<BeamerState> beamer;
+  late GlobalKey<BeamerState>? beamer;
   final toggle = Rx<bool>(false);
   final isAuthorized = Rx<bool>(false);
-
-  @override
-  void onInit() {
-    getGameList();
-    super.onInit();
-  }
 
   void followGame(GameModel gameModel) {
     gameRepository.value.addEntry(gameModel, GameType.followed);
@@ -41,7 +35,7 @@ class Controller extends GetxController {
       final List<dynamic> jsonData = json.decode(response.body);
       final List<GameModel> data =
           jsonData.map((json) => GameModel.fromJson(json)).toList();
-      debugPrint(data.toString());
+      // debugPrint(data.toString());
 
       gameRepository.value.gamesOnline = data;
     } else {
@@ -51,10 +45,10 @@ class Controller extends GetxController {
     debugPrint('game list received');
   }
 
-  Future<void> getLobbyList(String gameName) async {
+  Future<void> getLobbyList(String gameId) async {
     lobbyRepository.value.lobbies = [];
     final response =
-        await http.get(Uri.parse('$baseUrl/v1/games/$gameName/lobbies'));
+        await http.get(Uri.parse('$baseUrl/v1/lobby?gameId=$gameId'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonData = json.decode(response.body);
@@ -69,6 +63,44 @@ class Controller extends GetxController {
     lobbyRepository.refresh();
     debugPrint('lobby list received');
   }
+
+  Future<void> createLobby(String lobbyName, String gameCartId) async {
+    lobbyRepository.value.lobbies = [];
+    final response =
+    await http.post(Uri.parse('$baseUrl/v1/lobby'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'name': lobbyName,
+          'closed': false,
+          'gameCartId': gameCartId,
+        })
+    );
+
+    if (response.statusCode == 200) {
+    } else {
+      throw Exception('Failed to load data');
+    }
+    debugPrint('lobby created');
+  }
+
+  Future<void> joinLobby(String userId, String lobbyId) async {
+    lobbyRepository.value.lobbies = [];
+    final response =
+    await http.post(Uri.parse('$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyId}'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+    );
+
+    if (response.statusCode == 200) {
+    } else {
+      throw Exception('Failed to load data');
+    }
+    debugPrint('lobby joined');
+  }
+
 
   Future<void> login(String login, String password) async {
     final response = await http.post(Uri.parse('$baseUrl/v1/login'),
@@ -86,12 +118,36 @@ class Controller extends GetxController {
 
       user.value = data;
       isAuthorized.value = true;
-      debugPrint(user.value.id);
+      debugPrint("user id: ${user.value.id}");
     } else {
       throw Exception('Failed to load data');
     }
     user.refresh();
     debugPrint('user data received');
+  }
+
+  Future<void> logout(String login, String password) async {
+    final response = await http.post(Uri.parse('$baseUrl/v1/login'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'login': login,
+          'password': password,
+        }));
+
+    if (response.statusCode == 200) {
+      final UserModel data = UserModel.fromJson(json.decode(response.body));
+      debugPrint(data.toString());
+
+      user.value = data;
+      isAuthorized.value = true;
+      debugPrint("user id: ${user.value.id}");
+    } else {
+      throw Exception('Failed to load data');
+    }
+    user.refresh();
+    debugPrint('user logged out');
   }
 
   Future<void> register(

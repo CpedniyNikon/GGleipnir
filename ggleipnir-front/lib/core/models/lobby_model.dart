@@ -1,25 +1,32 @@
 class LobbyModel {
-  String name;
-  int playersCount;
-  int id;
-  int ping;
-  bool closed;
+  final String id;
+  final String name;
+  final List<String> playersIds;
+  final int ping;
+  final bool closed;
+  final String gameCartId;
 
-  LobbyModel(this.name, this.playersCount, this.id, this.ping, this.closed);
+  LobbyModel(this.id, this.name, this.playersIds, this.ping, this.closed, this.gameCartId);
 
   LobbyModel.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        playersCount = json['playersCount'],
-        id = json['id'],
+      : id = json['id'],
+        name = json['name'],
+        playersIds = List<String>.from(json['playerIds']),
         ping = json['ping'],
-        closed = json['closed'];
+        closed = json['closed'],
+        gameCartId = json['gameCartId'];
 
-  Map<String, dynamic> toJson() =>
-      {'name': name, 'playersCount': playersCount, 'id': id, 'ping': ping,
-      'closed': closed};
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'playersIds': playersIds,
+        'ping': ping,
+        'closed': closed,
+        'gameCartId': gameCartId
+      };
 
   @override
   String toString() {
-    return "$name $playersCount $id $ping $closed";
+    return "$name $playersIds $id $ping $closed $gameCartId";
   }
 }

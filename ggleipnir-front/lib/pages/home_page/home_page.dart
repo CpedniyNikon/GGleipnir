@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:ggleipnir_front/pages/appbars/ggappbar.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/pages/drawers/navigation_side.dart';
+import 'package:ggleipnir_front/pages/widget/current_lobby_widget.dart';
 import 'package:ggleipnir_front/pages/widget/game_list_widget.dart';
 import 'package:ggleipnir_front/pages/widget/lobby_list_widget.dart';
 
@@ -47,12 +48,21 @@ class _HomePageState extends State<HomePage> {
                             key: ValueKey('game_lobbies - ${DateTime.now()}'),
                             type: BeamPageType.scaleTransition,
                             child: LobbyListWidget(
-                                gameName: state.pathPatternSegments[1]),
+                                gameId: state.pathPatternSegments[1]),
                           ),
-                      '*': (context, state, data) => BeamPage(
-                            key: ValueKey('games - ${DateTime.now()}'),
+                      '/lobby/:gameId/:lobbyId': (context, state, data) =>
+                          BeamPage(
+                            key: ValueKey('game_lobbies - ${DateTime.now()}'),
                             type: BeamPageType.scaleTransition,
-                            child: const GameListWidget(),
+                            child: CurrentLobbyWidget(
+                              gameId: state.pathParameters['gameId']!,
+                              lobbyId: state.pathParameters['lobbyId']!,
+                            ),
+                          ),
+                      '*': (context, state, data) => const BeamPage(
+                            key: ValueKey('games'),
+                            type: BeamPageType.scaleTransition,
+                            child: GameListWidget(),
                           ),
                     },
                   ),

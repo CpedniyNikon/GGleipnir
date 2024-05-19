@@ -28,8 +28,8 @@ class _GameWidgetState extends State<GameWidget> {
             controller.followGame(
                 controller.gameRepository.value.gamesOnline[widget.index]);
           }
-          controller.beamer.currentState?.routerDelegate.beamToNamed(
-              '${Routes.gameLobbies}/${controller.gameRepository.value.gamesOnline[widget.index].name}');
+          controller.beamer!.currentState?.routerDelegate.beamToNamed(
+              '${Routes.gameLobbies}/${controller.gameRepository.value.gamesOnline[widget.index].id}');
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,27 +48,16 @@ class _GameWidgetState extends State<GameWidget> {
               style: GGTypography.commonStyle,
               """${controller.gameRepository.value.gamesOnline[widget.index].peopleInGame} игроков""",
             ),
-            Expanded(
-              child: ListView.separated(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 2,
-                itemBuilder: (BuildContext context, int index) => Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 3),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Text(
-                    controller
-                        .gameRepository.value.gamesOnline[widget.index].category
-                        .sublist(0, 2)[index],
-                    style: GGTypography.commonStyle.apply(),
-                  ),
-                ),
-                separatorBuilder: (BuildContext context, int index) => SizedBox(
-                  width: 5,
-                ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 3),
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                controller
+                    .gameRepository.value.gamesOnline[widget.index].category,
+                style: GGTypography.commonStyle.apply(),
               ),
             ),
           ],

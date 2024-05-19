@@ -27,7 +27,7 @@ class _GGAppBarState extends State<GGAppBar> {
         ),
         title: InkWell(
           onTap: () {
-            controller.beamer.currentState?.routerDelegate.beamToNamed('/');
+            controller.beamer!.currentState?.routerDelegate.beamToNamed('/');
           },
           child: const Row(
             mainAxisSize: MainAxisSize.min,

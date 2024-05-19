@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
@@ -13,6 +15,22 @@ class GameListWidget extends StatefulWidget {
 
 class _GameListWidgetState extends State<GameListWidget> {
   Controller controller = Get.find();
+
+  Timer? timer;
+
+  @override
+  void initState() {
+    timer = Timer.periodic(const Duration(seconds: 5), (timer) async {
+      controller.getGameList();
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
