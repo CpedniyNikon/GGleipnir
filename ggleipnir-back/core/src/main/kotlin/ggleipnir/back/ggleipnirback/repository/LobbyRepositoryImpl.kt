@@ -49,11 +49,11 @@ class LobbyRepositoryImpl(
     }
 
     private fun addPlayersToLobby(lobbies: List<LobbyDao>): List<Lobby> {
-        val queryUsersInLobby = "select * from user_lobby_match where lobby_id=?"
+        val queryUsersInLobby = "select * from lobby_user_match where lobby_id=?"
         val lobbiesResult = ArrayList<Lobby>()
 
         for (lobby in lobbies) {
-            val users: List<LobbyUserMatch> = jdbcTemplate.query(queryUsersInLobby, ::mapLobbyUser)
+            val users: List<LobbyUserMatch> = jdbcTemplate.query(queryUsersInLobby, ::mapLobbyUser, lobby.id)
             lobbiesResult.add(
                 Lobby(
                     lobby.id,

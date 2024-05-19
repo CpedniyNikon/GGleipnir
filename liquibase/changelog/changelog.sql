@@ -34,3 +34,22 @@ create table lobby_user_match (
     lobby_id varchar not null unique,
     user_id varchar not null unique
 );
+
+--changeset elyutinmaks:4
+--validCheckSum 8:2d0ce4723c5a5329ebe2a1bfea1be763
+create table lobby_message (
+    id varchar not null unique,
+    lobby_id varchar not null unique,
+    user_id varchar not null unique,
+    message varchar
+);
+
+--changeset elyutinmaks:5
+alter table lobby_user_match drop constraint lobby_user_match_lobby_id_key;
+
+--changeset elyutinmaks:6
+alter table lobby_message add column created_at bigint not null;
+
+--changeset elyutinmaks:7
+alter table lobby_message drop constraint lobby_message_lobby_id_key;
+alter table lobby_message drop constraint lobby_message_user_id_key;

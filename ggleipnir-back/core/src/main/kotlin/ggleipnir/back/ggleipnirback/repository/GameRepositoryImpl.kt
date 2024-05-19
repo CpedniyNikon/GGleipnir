@@ -14,7 +14,7 @@ import java.sql.ResultSet
 @Repository
 class GameRepositoryImpl(val jdbcTemplate: JdbcTemplate) : GameRepository {
     override fun addGame(gameCartRequest: GameCartCreationRequest): GameCart {
-        val queryToAddGame = "insert into game_cart(id, name, image_url, category) values (?, ?, ?);"
+        val queryToAddGame = "insert into game_cart(id, name, image_url, category) values (?, ?, ?, ?);"
         val gameCart = GameCart(
             IdGenerator.generateUuid(),
             gameCartRequest.name,
@@ -33,12 +33,12 @@ class GameRepositoryImpl(val jdbcTemplate: JdbcTemplate) : GameRepository {
     }
 
     override fun deleteGame(id: String) {
-        val queryToDeleteGame = "delete from game_cart where id = ?";
-        jdbcTemplate.update(queryToDeleteGame)
+        val queryToDeleteGame = "delete from game_cart where id=?;";
+        jdbcTemplate.update(queryToDeleteGame, id)
     }
 
     override fun getGame(id: String): GameCart {
-        val queryToGame = "select * from game_cart where id=?"
+        val queryToGame = "select * from game_cart where id=?;"
         try {
             return jdbcTemplate.queryForObject(queryToGame, ::mapGameRow, id)!!
         } catch (e: Exception) {
@@ -47,7 +47,7 @@ class GameRepositoryImpl(val jdbcTemplate: JdbcTemplate) : GameRepository {
     }
 
     override fun getGames(): List<GameCart> {
-        val queryToGames = "select * from game_cart where id=?"
+        val queryToGames = "select * from game_cart;"
         return jdbcTemplate.query(queryToGames, ::mapGameRow)
     }
 

@@ -55,16 +55,4 @@ class LobbyController(
     ) {
         lobbyService.deleteLobby(lobbyId)
     }
-
-    /*
-
-
-    fun deleteUserFromLobby(user: User, lobby: Lobby) {
-        lobbyRepository.deleteUserFromLobby(user, lobby)
-    }
-
-    fun deleteLobby(lobby: Lobby): Unit {
-        lobbyRepository.deleteLobby(lobby)
-    }
-     */
 }
