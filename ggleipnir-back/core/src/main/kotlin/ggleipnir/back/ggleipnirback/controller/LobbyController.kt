@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController
 class LobbyController(
     val lobbyService: LobbyService
 ) {
-    @GetMapping("/v1/lobby")
+    @GetMapping("/v1/lobbies")
     fun getLobbies(): List<Lobby> {
         return lobbyService.getLobbies()
     }
