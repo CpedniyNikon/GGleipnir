@@ -20,14 +20,14 @@ class GameRepositoryImpl(val jdbcTemplate: JdbcTemplate) : GameRepository {
             gameCartRequest.name,
             gameCartRequest.imageUrl,
             RandomGenerator.generateRandomInt(1000),
-            gameCartRequest.category
+            Category.fromInt(gameCartRequest.category)
         )
         jdbcTemplate.update(
             queryToAddGame,
             gameCart.id,
             gameCart.name,
             gameCart.imageUrl,
-            gameCart.category
+            gameCart.category.id
         )
         return gameCart
     }
