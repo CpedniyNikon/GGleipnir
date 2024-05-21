@@ -11,7 +11,7 @@ class GameRepository {
 
   GameRepository(this.gamesOnline, this.followedGames);
 
-  GameRepository.initial() : gamesOnline = [], followedGames = [];
+  GameRepository.empty() : gamesOnline = [], followedGames = [];
 
   GameRepository copyWith({required List<GameModel> gamesOnline, required List<GameModel> followedGames}) {
     return GameRepository(gamesOnline, followedGames);

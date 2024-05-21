@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:beamer/beamer.dart';
@@ -14,12 +15,13 @@ import 'package:http/http.dart' as http;
 class Controller extends GetxController {
   final String baseUrl = 'http://localhost:8080';
 
-  final gameRepository = Rx<GameRepository>(GameRepository([], []));
-  final lobbyRepository = Rx<LobbyRepository>(LobbyRepository([]));
-  final user = Rx<UserModel>(const UserModel('', '', '', '', ''));
+  final gameRepository = Rx<GameRepository>(GameRepository.empty());
+  final lobbyRepository = Rx<LobbyRepository>(LobbyRepository.empty());
+  final user = Rx<UserModel>(const UserModel.empty());
   late GlobalKey<BeamerState>? beamer;
   final toggle = Rx<bool>(false);
   final isAuthorized = Rx<bool>(false);
+  final isFetching = Rx<bool>(true);
 
   void followGame(GameModel gameModel) {
     gameRepository.value.addEntry(gameModel, GameType.followed);
@@ -35,14 +37,17 @@ class Controller extends GetxController {
       final List<dynamic> jsonData = json.decode(response.body);
       final List<GameModel> data =
           jsonData.map((json) => GameModel.fromJson(json)).toList();
-      // debugPrint(data.toString());
-
       gameRepository.value.gamesOnline = data;
+      if(isFetching.value == true && data.isNotEmpty) {
+        isFetching.value = false;
+      }
     } else {
       throw Exception('Failed to load data');
     }
+
     gameRepository.refresh();
     debugPrint('game list received');
+
   }
 
   Future<void> getLobbyList(String gameId) async {
@@ -124,30 +129,6 @@ class Controller extends GetxController {
     }
     user.refresh();
     debugPrint('user data received');
-  }
-
-  Future<void> logout(String login, String password) async {
-    final response = await http.post(Uri.parse('$baseUrl/v1/login'),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: jsonEncode({
-          'login': login,
-          'password': password,
-        }));
-
-    if (response.statusCode == 200) {
-      final UserModel data = UserModel.fromJson(json.decode(response.body));
-      debugPrint(data.toString());
-
-      user.value = data;
-      isAuthorized.value = true;
-      debugPrint("user id: ${user.value.id}");
-    } else {
-      throw Exception('Failed to load data');
-    }
-    user.refresh();
-    debugPrint('user logged out');
   }
 
   Future<void> register(

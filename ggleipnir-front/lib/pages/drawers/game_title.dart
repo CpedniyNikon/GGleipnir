@@ -64,13 +64,6 @@ class _GameTitleState extends State<GameTitle> {
                         ),
                       ],
                     ),
-                    Expanded(
-                      child: Text(
-                        "${widget.model.peopleInGame}",
-                        style: GGTypography.commonStyle,
-                        textAlign: TextAlign.end,
-                      ),
-                    ),
                   ],
                 ),
             ),
