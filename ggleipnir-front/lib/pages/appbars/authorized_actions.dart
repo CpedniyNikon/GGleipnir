@@ -12,6 +12,7 @@ List<Widget> authorizedActions() {
     ),
     InkWell(
       onTap: () {
+        controller.quitLobbies(controller.user.value.id);
         controller.isAuthorized.value = false;
       },
       child: const Padding(

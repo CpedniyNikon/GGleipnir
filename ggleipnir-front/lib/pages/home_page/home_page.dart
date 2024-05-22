@@ -52,17 +52,17 @@ class _HomePageState extends State<HomePage> {
                           ),
                       '/lobby/:gameId/:lobbyId': (context, state, data) =>
                           BeamPage(
-                            key: ValueKey('game_lobbies - ${DateTime.now()}'),
+                            key: ValueKey('lobby - ${DateTime.now()}'),
                             type: BeamPageType.scaleTransition,
                             child: CurrentLobbyWidget(
                               gameId: state.pathParameters['gameId']!,
                               lobbyId: state.pathParameters['lobbyId']!,
                             ),
                           ),
-                      '*': (context, state, data) => const BeamPage(
-                            key: ValueKey('games'),
+                      '*': (context, state, data) => BeamPage(
+                            key: ValueKey('games - ${DateTime.now()}'),
                             type: BeamPageType.scaleTransition,
-                            child: GameListWidget(),
+                            child: const GameListWidget(),
                           ),
                     },
                   ),

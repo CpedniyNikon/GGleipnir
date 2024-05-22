@@ -19,9 +19,12 @@ class _LobbyWidgetState extends State<LobbyWidget> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        if(!controller.isAuthorized.value) return;
+
         controller.joinLobby(controller.user.value.id, controller.lobbyRepository.value.lobbies[widget.index].id);
-        // controller.beamer!.currentState?.routerDelegate.beamToNamed(
-        //     'lobby/${controller.lobbyRepository.value.lobbies[widget.index].gameCartId}/${controller.lobbyRepository.value.lobbies[widget.index].id}');
+        controller.beamer!.currentState?.routerDelegate.beamToNamed('/');
+        controller.beamer!.currentState?.routerDelegate.beamToNamed(
+            'lobby/${controller.lobbyRepository.value.lobbies[widget.index].gameCartId}/${controller.lobbyRepository.value.lobbies[widget.index].id}');
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 5),

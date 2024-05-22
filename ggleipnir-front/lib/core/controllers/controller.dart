@@ -89,7 +89,6 @@ class Controller extends GetxController {
   }
 
   Future<void> joinLobby(String userId, String lobbyId) async {
-    lobbyRepository.value.lobbies = [];
     final response =
     await http.post(Uri.parse('$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyId}'),
         headers: {
@@ -104,8 +103,18 @@ class Controller extends GetxController {
     debugPrint('lobby joined');
   }
 
+  Future<void> quitLobbies(String userId) async {
+    for(int i = 0; i < lobbyRepository.value.lobbies.length; i++) {
+      await http.delete(Uri.parse('$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyRepository.value.lobbies[i].id}'),
+      );
+    }
+    lobbyRepository.refresh();
+  }
 
-  Future<void> login(String login, String password) async {
+
+  Future<bool> login(String login, String password) async {
+    bool result = false;
+
     final response = await http.post(Uri.parse('$baseUrl/v1/login'),
         headers: {
           'Content-Type': 'application/json',
@@ -122,11 +131,12 @@ class Controller extends GetxController {
       user.value = data;
       isAuthorized.value = true;
       debugPrint("user id: ${user.value.id}");
-    } else {
-      throw Exception('Failed to load data');
+
+      result = true;
     }
     user.refresh();
     debugPrint('user data received');
+    return result;
   }
 
   Future<void> register(

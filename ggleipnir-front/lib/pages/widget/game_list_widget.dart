@@ -20,8 +20,8 @@ class _GameListWidgetState extends State<GameListWidget> {
 
   @override
   void initState() {
-    controller.getGameList();
-    timer = Timer.periodic(const Duration(seconds: 5), (timer) async {
+    // controller.getGameList();
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
       controller.getGameList();
     });
     super.initState();

@@ -43,12 +43,15 @@ class _GameTitleState extends State<GameTitle> {
               child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ClipOval(
-                      child: CachedNetworkImage(
-                        imageUrl: widget.model.imageUrl,
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.fill,
+                    Container(
+                      margin: EdgeInsets.only(right: 5),
+                      child: ClipOval(
+                        child: CachedNetworkImage(
+                          imageUrl: widget.model.imageUrl,
+                          width: 30,
+                          height: 30,
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                     Column(
