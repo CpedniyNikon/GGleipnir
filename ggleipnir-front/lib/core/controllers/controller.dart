@@ -59,8 +59,6 @@ class Controller extends GetxController {
       final List<dynamic> jsonData = json.decode(response.body);
       final List<LobbyModel> data =
           jsonData.map((json) => LobbyModel.fromJson(json)).toList();
-      debugPrint(data.toString());
-
       lobbyRepository.value.lobbies = data;
     } else {
       throw Exception('Failed to load data');

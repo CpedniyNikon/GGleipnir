@@ -44,5 +44,5 @@ FROM nginx:1.25.2-alpine
 COPY --from=build-env /app/build/web /usr/share/nginx/html
 
 # Expose and run nginx
-EXPOSE 10010
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/DIPS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/controllers/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/models/user_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/repositories/game_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/repositories/game_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/repositories/lobby_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/repositories/lobby_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/drawers/game_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/drawers/game_title.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/drawers/navigation_side.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/drawers/navigation_side.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/game_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/game_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/lobby_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/lobby_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
