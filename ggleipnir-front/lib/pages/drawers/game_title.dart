@@ -23,8 +23,8 @@ class _GameTitleState extends State<GameTitle> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.beamer!.currentState?.routerDelegate
-            .beamToNamed('${Routes.gameLobbies}/${widget.model.name}');
+        controller.beamer!.currentState?.routerDelegate.beamToNamed(
+            '${Routes.gameLobbies}/${widget.model.id}');
       },
       child: Obx(
         () => controller.toggle.value ||

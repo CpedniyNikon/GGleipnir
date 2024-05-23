@@ -1,7 +1,7 @@
 class LobbyModel {
   final String id;
   final String name;
-  final List<String> playersIds;
+  List<String> playersIds = [];
   final int ping;
   final bool closed;
   final String gameCartId;

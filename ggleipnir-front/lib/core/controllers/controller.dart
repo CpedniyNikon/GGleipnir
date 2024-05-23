@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/models/lobby_model.dart';
+import 'package:ggleipnir_front/core/models/message_model.dart';
 import 'package:ggleipnir_front/core/models/user_model.dart';
 import 'package:ggleipnir_front/core/repositories/game_repository.dart';
 import 'package:ggleipnir_front/core/models/game_model.dart';
@@ -17,6 +18,7 @@ class Controller extends GetxController {
 
   final gameRepository = Rx<GameRepository>(GameRepository.empty());
   final lobbyRepository = Rx<LobbyRepository>(LobbyRepository.empty());
+  RxList<MessageModel> messages = RxList();
   final user = Rx<UserModel>(const UserModel.empty());
   late GlobalKey<BeamerState>? beamer;
   final toggle = Rx<bool>(false);
@@ -38,7 +40,7 @@ class Controller extends GetxController {
       final List<GameModel> data =
           jsonData.map((json) => GameModel.fromJson(json)).toList();
       gameRepository.value.gamesOnline = data;
-      if(isFetching.value == true && data.isNotEmpty) {
+      if (isFetching.value == true && data.isNotEmpty) {
         isFetching.value = false;
       }
     } else {
@@ -46,8 +48,7 @@ class Controller extends GetxController {
     }
 
     gameRepository.refresh();
-    debugPrint('game list received');
-
+    // debugPrint('game list received');
   }
 
   Future<void> getLobbyList(String gameId) async {
@@ -69,8 +70,7 @@ class Controller extends GetxController {
 
   Future<void> createLobby(String lobbyName, String gameCartId) async {
     lobbyRepository.value.lobbies = [];
-    final response =
-    await http.post(Uri.parse('$baseUrl/v1/lobby'),
+    final response = await http.post(Uri.parse('$baseUrl/v1/lobby'),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -78,8 +78,7 @@ class Controller extends GetxController {
           'name': lobbyName,
           'closed': false,
           'gameCartId': gameCartId,
-        })
-    );
+        }));
 
     if (response.statusCode == 200) {
     } else {
@@ -89,11 +88,11 @@ class Controller extends GetxController {
   }
 
   Future<void> joinLobby(String userId, String lobbyId) async {
-    final response =
-    await http.post(Uri.parse('$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyId}'),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+    final response = await http.post(
+      Uri.parse('$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyId}'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     );
 
     if (response.statusCode == 200) {
@@ -104,13 +103,14 @@ class Controller extends GetxController {
   }
 
   Future<void> quitLobbies(String userId) async {
-    for(int i = 0; i < lobbyRepository.value.lobbies.length; i++) {
-      await http.delete(Uri.parse('$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyRepository.value.lobbies[i].id}'),
+    for (int i = 0; i < lobbyRepository.value.lobbies.length; i++) {
+      await http.delete(
+        Uri.parse(
+            '$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyRepository.value.lobbies[i].id}'),
       );
     }
     lobbyRepository.refresh();
   }
-
 
   Future<bool> login(String login, String password) async {
     bool result = false;
@@ -158,5 +158,36 @@ class Controller extends GetxController {
       throw Exception('Failed to load data');
     }
     debugPrint('registration completed');
+  }
+
+  Future<void> writeMessage(
+      String lobbyId, String userId, String message) async {
+    final response = await http.post(Uri.parse('$baseUrl/v1/message'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'lobbyId': lobbyId,
+          'userId': userId,
+          'message': message,
+        }));
+
+    if (response.statusCode == 200) {
+      debugPrint('${response.statusCode}');
+    }
+    debugPrint('message send');
+  }
+
+  Future<void> getMessages(String lobbyId) async {
+    final response =
+        await http.get(Uri.parse('$baseUrl/v1/messages?lobbyId=${lobbyId}'));
+
+    if (response.statusCode == 200) {
+      final List<dynamic> jsonData = json.decode(response.body);
+      final List<MessageModel> data =
+          jsonData.map((json) => MessageModel.fromJson(json)).toList();
+      messages.value = data;
+    }
+    messages.refresh();
   }
 }
