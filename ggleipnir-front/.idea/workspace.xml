@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsState" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/BrowsingTopicsState" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Favicons" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/controllers/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/models/game_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/models/game_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/models/lobby_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/models/lobby_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/ggappbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/ggappbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/drawers/game_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/drawers/game_title.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/game_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/game_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/game_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/lobby_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widget/lobby_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/lobby_widget.dart" afterDir="false" />
-    </list>
+    <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +56,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2cY2UuQHEyfNdHcFK5VRbUvH7IK" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -89,7 +75,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/dev/GGleipnir/ggleipnir-back/core&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/src/flutter/bin&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -98,7 +84,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -109,11 +95,11 @@
       <recent name="C:\dev\GGleipnir\ggleipnir-front\graphics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\GGleipnir\ggleipnir-front\lib" />
       <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\src" />
       <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\pages\home_page" />
       <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\router_delegates" />
       <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\repositories" />
-      <recent name="C:\dev\GGleipnir\ggleipnir-front\lib\pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -184,6 +170,8 @@
       <workItem from="1713908125102" duration="3585000" />
       <workItem from="1713963172339" duration="5537000" />
       <workItem from="1714339639797" duration="27000" />
+      <workItem from="1716507799682" duration="2170000" />
+      <workItem from="1716510008653" duration="280000" />
     </task>
     <task id="LOCAL-00001" summary="implemented appbar and room list">
       <option name="closed" value="true" />
@@ -230,6 +218,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="docker-compose.yaml" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

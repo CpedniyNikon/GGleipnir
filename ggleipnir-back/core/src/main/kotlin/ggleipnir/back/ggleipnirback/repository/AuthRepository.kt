@@ -6,4 +6,6 @@ interface AuthRepository {
     fun getUserByLogin(login: String, password: String): User
 
     fun saveUser(user: User): User
+
+    fun getUserById(userId: String): User
 }

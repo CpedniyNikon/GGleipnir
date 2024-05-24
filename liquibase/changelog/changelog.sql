@@ -53,3 +53,9 @@ alter table lobby_message add column created_at bigint not null;
 --changeset elyutinmaks:7
 alter table lobby_message drop constraint lobby_message_lobby_id_key;
 alter table lobby_message drop constraint lobby_message_user_id_key;
+
+--changeset elyutinmaks:8
+alter table lobby_message add column user_login varchar not null default 'empty';
+
+--changeset elyutinmaks:9
+delete from lobby_message where user_login = 'empty';

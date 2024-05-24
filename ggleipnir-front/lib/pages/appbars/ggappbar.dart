@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:ggleipnir_front/pages/appbars/authorized_actions.dart';
 import 'package:ggleipnir_front/pages/appbars/unauthorized_actions.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
@@ -16,6 +17,10 @@ class GGAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 class _GGAppBarState extends State<GGAppBar> {
   final Controller controller = Get.find();
+
+  callback()  {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +47,7 @@ class _GGAppBarState extends State<GGAppBar> {
         ),
         actions: controller.isAuthorized.value
             ? authorizedActions()
-            : unAuthorizedActions(context),
+            : unAuthorizedActions(context, callback),
       ),
     );
   }

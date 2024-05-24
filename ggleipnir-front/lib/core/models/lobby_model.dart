@@ -1,12 +1,20 @@
 class LobbyModel {
   final String id;
   final String name;
-  final List<String> playersIds;
+  List<String> playersIds = [];
   final int ping;
   final bool closed;
   final String gameCartId;
 
   LobbyModel(this.id, this.name, this.playersIds, this.ping, this.closed, this.gameCartId);
+
+  LobbyModel.empty()
+      : id = "",
+        name = "",
+         playersIds = [],
+         ping = 0,
+         closed = false,
+         gameCartId = "";
 
   LobbyModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],

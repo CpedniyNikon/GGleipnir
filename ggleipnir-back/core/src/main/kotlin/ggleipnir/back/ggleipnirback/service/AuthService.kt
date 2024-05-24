@@ -25,4 +25,8 @@ class AuthService(
         return authRepository.saveUser(domainModel)
     }
 
+    fun getUserById(userId: String): User {
+        return authRepository.getUserById(userId)
+    }
+
 }

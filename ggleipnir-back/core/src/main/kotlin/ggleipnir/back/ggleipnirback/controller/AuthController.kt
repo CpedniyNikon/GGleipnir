@@ -6,10 +6,14 @@ import ggleipnir.back.ggleipnirback.model.request.UserRegisterRequest
 import ggleipnir.back.ggleipnirback.service.AuthService
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.web.bind.annotation.CrossOrigin
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
+@CrossOrigin
 @RestController
 class AuthController(
     val authService: AuthService
@@ -33,6 +37,13 @@ class AuthController(
         val user = authService.saveUser(request)
         log.info("OUT /v1/register")
         return user
+    }
+
+    @GetMapping("/v1/user")
+    fun getUserInfo(
+        @RequestParam userId: String
+    ): User {
+        return authService.getUserById(userId)
     }
 
     companion object {

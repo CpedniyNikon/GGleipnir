@@ -23,6 +23,7 @@ class _GameWidgetState extends State<GameWidget> {
     return Obx(
       () => InkWell(
         onTap: () {
+          controller.isFetching.value = true;
           if (!controller.gameRepository.value.followedGames.contains(
               controller.gameRepository.value.gamesOnline[widget.index])) {
             controller.followGame(

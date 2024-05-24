@@ -22,7 +22,7 @@ class _LobbyListWidgetState extends State<LobbyListWidget> {
 
   @override
   void initState() {
-    timer = Timer.periodic(const Duration(seconds: 5), (timer) async {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
       controller.getLobbyList(
         widget.gameId,
       );

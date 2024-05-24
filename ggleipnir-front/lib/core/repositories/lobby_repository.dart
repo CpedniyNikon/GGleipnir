@@ -5,7 +5,7 @@ class LobbyRepository {
 
   LobbyRepository(this.lobbies);
 
-  LobbyRepository.initial() : lobbies = [];
+  LobbyRepository.empty() : lobbies = [];
 
   LobbyRepository copyWith({required List<LobbyModel> games}) {
     return LobbyRepository(games);

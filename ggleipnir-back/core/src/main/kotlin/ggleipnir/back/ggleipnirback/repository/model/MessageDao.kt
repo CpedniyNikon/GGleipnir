@@ -5,5 +5,6 @@ data class MessageDao(
     val lobbyId: String,
     val userId: String,
     val message: String?,
-    val createdAt: Long
+    val createdAt: Long,
+    val userLogin: String
 )

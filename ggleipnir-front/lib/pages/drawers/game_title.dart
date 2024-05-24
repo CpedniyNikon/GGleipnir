@@ -23,8 +23,8 @@ class _GameTitleState extends State<GameTitle> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.beamer!.currentState?.routerDelegate
-            .beamToNamed('${Routes.gameLobbies}/${widget.model.name}');
+        controller.beamer!.currentState?.routerDelegate.beamToNamed(
+            '${Routes.gameLobbies}/${widget.model.id}');
       },
       child: Obx(
         () => controller.toggle.value ||
@@ -43,12 +43,15 @@ class _GameTitleState extends State<GameTitle> {
               child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ClipOval(
-                      child: CachedNetworkImage(
-                        imageUrl: widget.model.imageUrl,
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.fill,
+                    Container(
+                      margin: EdgeInsets.only(right: 5),
+                      child: ClipOval(
+                        child: CachedNetworkImage(
+                          imageUrl: widget.model.imageUrl,
+                          width: 30,
+                          height: 30,
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                     Column(
@@ -63,13 +66,6 @@ class _GameTitleState extends State<GameTitle> {
                           style: GGTypography.commonStyle,
                         ),
                       ],
-                    ),
-                    Expanded(
-                      child: Text(
-                        "${widget.model.peopleInGame}",
-                        style: GGTypography.commonStyle,
-                        textAlign: TextAlign.end,
-                      ),
                     ),
                   ],
                 ),

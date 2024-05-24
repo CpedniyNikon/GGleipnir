@@ -34,7 +34,18 @@ class _FollowedGameDrawerState extends State<NavigationSide> {
               controller.toggle.value ||
                       (MediaQuery.of(context).size.width !=
                           html.window.screen?.width?.toDouble())
-                  ? Container()
+                  ? (MediaQuery.of(context).size.width !=
+                          html.window.screen?.width?.toDouble())
+                      ? Container()
+                      : InkWell(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: const Icon(Icons.arrow_back),
+                          ),
+                          onTap: () {
+                            controller.toggle.value = !controller.toggle.value;
+                          },
+                        )
                   : ListTile(
                       title: const Text(
                         'Для вас',
@@ -51,7 +62,7 @@ class _FollowedGameDrawerState extends State<NavigationSide> {
                       (MediaQuery.of(context).size.width !=
                           html.window.screen?.width?.toDouble())
                   ? Padding(
-                      padding: const EdgeInsets.only(top: 8, bottom: 8),
+                      padding: const EdgeInsets.symmetric(vertical: 8),
                       child: SvgPicture.asset('graphics/heart.svg',
                           fit: BoxFit.fill),
                     )

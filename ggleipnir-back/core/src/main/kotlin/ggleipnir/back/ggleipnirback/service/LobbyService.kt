@@ -3,6 +3,7 @@ package ggleipnir.back.ggleipnirback.service
 import ggleipnir.back.ggleipnirback.model.Lobby
 import ggleipnir.back.ggleipnirback.model.request.LobbyCreationRequest
 import ggleipnir.back.ggleipnirback.repository.LobbyRepository
+import ggleipnir.back.ggleipnirback.repository.model.LobbyDao
 import org.springframework.stereotype.Service
 
 @Service
@@ -15,6 +16,10 @@ class LobbyService(
 
     fun getLobbiesByGame(gameId: String): List<Lobby> {
         return lobbyRepository.getLobbiesByGameId(gameId)
+    }
+
+    fun getLobbyByLobbyId(lobbyId: String): LobbyDao {
+        return lobbyRepository.getLobbyByLobbyId(lobbyId)
     }
 
     fun addLobby(lobby: LobbyCreationRequest) {

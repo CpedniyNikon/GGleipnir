@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';
 
-List<Widget> unAuthorizedActions(BuildContext context) {
+List<Widget> unAuthorizedActions(BuildContext context, Callback callback) {
   return <Widget>[
     InkWell(
       onTap: () {
-        _showLoginDialog(context);
+        _showLoginDialog(context, callback);
       },
       child: const Padding(
         padding: EdgeInsets.all(16.0),
@@ -17,7 +18,7 @@ List<Widget> unAuthorizedActions(BuildContext context) {
     ),
     InkWell(
       onTap: () {
-        _showRegistrationDialog(context);
+        _showRegistrationDialog(context, callback);
       },
       child: const Padding(
         padding: EdgeInsets.all(16.0),
@@ -34,7 +35,7 @@ List<Widget> unAuthorizedActions(BuildContext context) {
   ];
 }
 
-void _showLoginDialog(BuildContext context) {
+void _showLoginDialog(BuildContext context, Callback callback) {
   final Controller controller = Get.find();
   final loginController = TextEditingController();
   final passwordController = TextEditingController();
@@ -115,9 +116,15 @@ void _showLoginDialog(BuildContext context) {
               height: 20,
             ),
             InkWell(
-              onTap: () {
-                controller.login(loginController.text, passwordController.text);
-                Navigator.of(context).pop();
+              onTap: () async {
+                final result = await controller.login(loginController.text, passwordController.text);
+                if(result) {
+                  Navigator.of(context).pop();
+                } else {
+                  loginController.clear();
+                  passwordController.clear();
+                  callback();
+                }
               },
               child: Container(
                   height: 30,
@@ -138,7 +145,7 @@ void _showLoginDialog(BuildContext context) {
   );
 }
 
-void _showRegistrationDialog(BuildContext context) {
+void _showRegistrationDialog(BuildContext context, Callback callback) {
   final Controller controller = Get.find();
   final loginController = TextEditingController();
   final passwordController = TextEditingController();

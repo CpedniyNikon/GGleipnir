@@ -20,7 +20,8 @@ class _GameListWidgetState extends State<GameListWidget> {
 
   @override
   void initState() {
-    timer = Timer.periodic(const Duration(seconds: 5), (timer) async {
+    // controller.getGameList();
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
       controller.getGameList();
     });
     super.initState();
@@ -48,7 +49,7 @@ class _GameListWidgetState extends State<GameListWidget> {
             ),
             const SizedBox(height: 30,),
             Obx(
-              () => controller.gameRepository.value.gamesOnline != []
+              () => (!controller.isFetching.value)
                   ? GridView.builder(
                       shrinkWrap: true,
                       itemCount:

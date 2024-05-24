@@ -9,6 +9,13 @@ class UserModel extends Equatable {
 
   const UserModel(this.id, this.login, this.name, this.password, this.meta);
 
+  const UserModel.empty()
+      : id = "",
+        login = "",
+        name = "",
+        password = "",
+        meta = "";
+
   UserModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         login = json['login'],
