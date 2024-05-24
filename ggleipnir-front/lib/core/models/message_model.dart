@@ -1,3 +1,4 @@
+
 class MessageModel {
   final String id;
   final String lobbyId;
@@ -7,6 +8,7 @@ class MessageModel {
 
   MessageModel(
       this.id, this.lobbyId, this.userId, this.message, this.createdAt);
+
 
   MessageModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],

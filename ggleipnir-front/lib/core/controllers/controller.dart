@@ -183,7 +183,7 @@ class Controller extends GetxController {
         await http.get(Uri.parse('$baseUrl/v1/messages?lobbyId=${lobbyId}'));
 
     if (response.statusCode == 200) {
-      final List<dynamic> jsonData = json.decode(response.body);
+      final List<dynamic> jsonData = json.decode(utf8.decode(response.bodyBytes));
       final List<MessageModel> data =
           jsonData.map((json) => MessageModel.fromJson(json)).toList();
       messages.value = data;
