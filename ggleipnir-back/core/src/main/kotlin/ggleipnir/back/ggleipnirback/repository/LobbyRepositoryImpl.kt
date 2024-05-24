@@ -26,6 +26,11 @@ class LobbyRepositoryImpl(
         return addPlayersToLobby(lobbies)
     }
 
+    override fun getLobbyByLobbyId(lobbyId: String): LobbyDao {
+        val query = "select * from lobby where id=?;";
+        return jdbcTemplate.queryForObject(query, ::mapLobbyRow, lobbyId)!!
+    }
+
     override fun addLobby(lobby: LobbyCreationRequest) {
         val queryToAddLobby = "insert into lobby(id, name, closed, game_cart_id) values (?, ?, ?, ?);"
         jdbcTemplate.update(queryToAddLobby, IdGenerator.generateUuid(), lobby.name, lobby.closed, lobby.gameCartId)

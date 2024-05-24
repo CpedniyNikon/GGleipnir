@@ -26,6 +26,11 @@ class AuthRepositoryImpl(
         return user
     }
 
+    override fun getUserById(userId: String): User {
+        val query = "select * from user_info where id=?;"
+        return jdbcTemplate.queryForObject(query, ::mapRow, userId)!!
+    }
+
     private fun mapRow(rs: ResultSet, rn: Int): User {
         return User(
             rs.getString("id"),

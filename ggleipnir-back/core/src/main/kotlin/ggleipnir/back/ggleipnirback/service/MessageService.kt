@@ -6,10 +6,12 @@ import org.springframework.stereotype.Service
 
 @Service
 class MessageService(
-    val messageRepository: MessageRepository
+    val messageRepository: MessageRepository,
+    val authService: AuthService
 ) {
     fun sendMessageToLobby(userId: String, lobbyId: String, message: String?) {
-        messageRepository.sendMessageToLobby(userId, lobbyId, message)
+        val login = authService.getUserById(userId).login
+        messageRepository.sendMessageToLobby(userId, lobbyId, message, login)
     }
 
     fun getMessageHistoryFromLobby(lobbyId: String): List<MessageDao> {

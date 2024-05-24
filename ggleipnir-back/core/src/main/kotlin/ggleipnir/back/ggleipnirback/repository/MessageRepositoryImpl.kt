@@ -11,9 +11,9 @@ import java.time.Instant
 class MessageRepositoryImpl(
     val jdbcTemplate: JdbcTemplate
 ) : MessageRepository {
-    override fun sendMessageToLobby(userId: String, lobbyId: String, message: String?) {
-        val queryToSendMessage = "insert into lobby_message(id, lobby_id, user_id, message, created_at) values (?,?,?,?,?);"
-        jdbcTemplate.update(queryToSendMessage, IdGenerator.generateUuid(), lobbyId, userId, message, Instant.now().toEpochMilli())
+    override fun sendMessageToLobby(userId: String, lobbyId: String, message: String?, login: String) {
+        val queryToSendMessage = "insert into lobby_message(id, lobby_id, user_id, message, created_at, user_login) values (?,?,?,?,?,?);"
+        jdbcTemplate.update(queryToSendMessage, IdGenerator.generateUuid(), lobbyId, userId, message, Instant.now().toEpochMilli(), login)
     }
 
     override fun getMessageHistoryFromLobby(lobbyId: String): List<MessageDao> {
@@ -28,7 +28,8 @@ class MessageRepositoryImpl(
             lobbyId = rs.getString("lobby_id"),
             userId = rs.getString("user_id"),
             message = rs.getString("message"),
-            createdAt = rs.getLong("created_at")
+            createdAt = rs.getLong("created_at"),
+            userLogin = rs.getString("user_login")
         )
     }
 }
