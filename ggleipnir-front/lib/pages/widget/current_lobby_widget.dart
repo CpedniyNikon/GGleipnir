@@ -30,7 +30,6 @@ class _GameListWidgetState extends State<CurrentLobbyWidget> {
   void initState() {
     super.initState();
     timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
-
       controller.getLobbyList(
         widget.gameId,
       );
@@ -107,17 +106,25 @@ class _GameListWidgetState extends State<CurrentLobbyWidget> {
                             shrinkWrap: true,
                             itemCount: controller.users.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                margin: EdgeInsets.symmetric(vertical: 5),
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    color: Colors.blue.withOpacity(0.1),
-                                    borderRadius: BorderRadius.circular(5),
-                                  ),
-                                  child: Text(
-                                    controller.users[index].name,
-                                      textAlign:
-                                       TextAlign.center,
+                              return InkWell(
+                                onTap: () {
+                                  controller
+                                      .beamer?.currentState?.routerDelegate
+                                      .beamToNamed(
+                                          '/profile/${controller.users[index].id}');
+                                },
+                                child: Container(
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue.withOpacity(0.1),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Text(
+                                      controller.users[index].name,
+                                      textAlign: TextAlign.center,
+                                    ),
                                   ),
                                 ),
                               );

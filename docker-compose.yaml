@@ -1,12 +1,12 @@
 services:
-  # web:
-  #   container_name: web
-  #   build:
-  #     context: ggleipnir-front
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - 10010:80
-  #   restart: always
+  web:
+    container_name: web
+    build:
+      context: ggleipnir-front
+      dockerfile: Dockerfile
+    ports:
+      - 10010:80
+    restart: always
 
   core:
     container_name: core

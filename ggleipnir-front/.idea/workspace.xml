@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc" />
+    <list default="true" id="e08b94eb-d39c-4979-bf3d-0f9e481c7af0" name="Changes" comment="переписал говно riverpod на ахуеный bloc">
+      <change afterPath="$PROJECT_DIR$/lib/pages/widget/profile_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/authorized_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/appbars/unauthorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbars/unauthorized_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_page/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/widget/current_lobby_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widget/current_lobby_widget.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

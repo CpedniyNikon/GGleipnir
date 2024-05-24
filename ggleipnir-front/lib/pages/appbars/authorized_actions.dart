@@ -6,10 +6,6 @@ List<Widget> authorizedActions() {
   final Controller controller = Get.find();
 
   return <Widget>[
-    const Padding(
-      padding: EdgeInsets.all(16.0),
-      child: Text("Profile"),
-    ),
     InkWell(
       onTap: () {
         controller.quitLobbies(controller.user.value.id);
@@ -18,6 +14,18 @@ List<Widget> authorizedActions() {
       child: const Padding(
         padding: EdgeInsets.all(16.0),
         child: Text("Log out"),
+      ),
+    ),
+    InkWell(
+      onTap: () {
+        controller
+            .beamer?.currentState?.routerDelegate
+            .beamToNamed(
+            '/profile/${controller.user.value.id}');
+      },
+      child: const Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Icon(Icons.account_circle_outlined),
       ),
     ),
   ];
