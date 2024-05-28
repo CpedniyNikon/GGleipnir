@@ -60,5 +60,6 @@ alter table lobby_message add column user_login varchar not null default 'empty'
 --changeset elyutinmaks:9
 delete from lobby_message where user_login = 'empty';
 
---changeset elyutinmaks:9
+--changeset elyutinmaks:10
+delete from user_info where true;
 alter table user_info add column image varchar not null;
