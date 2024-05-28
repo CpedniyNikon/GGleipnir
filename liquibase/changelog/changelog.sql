@@ -58,4 +58,7 @@ alter table lobby_message drop constraint lobby_message_user_id_key;
 alter table lobby_message add column user_login varchar not null default 'empty';
 
 --changeset elyutinmaks:9
-delete from lobby_message where user_login = 'empty;
+delete from lobby_message where user_login = 'empty';
+
+--changeset elyutinmaks:9
+alter table user_info add column image varchar not null;

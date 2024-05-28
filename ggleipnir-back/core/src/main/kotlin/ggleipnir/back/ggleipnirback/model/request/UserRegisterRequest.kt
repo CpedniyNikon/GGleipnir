@@ -4,5 +4,6 @@ data class UserRegisterRequest (
     val login: String,
     val password: String,
     val name: String,
-    val meta: String
+    val meta: String,
+    val image: String?,
 )

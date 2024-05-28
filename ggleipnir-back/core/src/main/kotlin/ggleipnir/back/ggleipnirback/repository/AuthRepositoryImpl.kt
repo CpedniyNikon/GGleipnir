@@ -21,8 +21,8 @@ class AuthRepositoryImpl(
     }
 
     override fun saveUser(user: User): User {
-        val query = "insert into user_info(id, login, password, name, meta) values (?, ?, ?, ?, ?);"
-        jdbcTemplate.update(query, user.id, user.login, user.password, user.name, user.meta)
+        val query = "insert into user_info(id, login, password, name, meta, image) values (?, ?, ?, ?, ?, ?);"
+        jdbcTemplate.update(query, user.id, user.login, user.password, user.name, user.meta, user.image)
         return user
     }
 
@@ -37,7 +37,8 @@ class AuthRepositoryImpl(
             rs.getString("login"),
             rs.getString("password"),
             rs.getString("name"),
-            rs.getString("meta")
+            rs.getString("meta"),
+            rs.getString("image")
         )
     }
 }
