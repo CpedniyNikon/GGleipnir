@@ -8,6 +8,14 @@ class LobbyModel {
 
   LobbyModel(this.id, this.name, this.playersIds, this.ping, this.closed, this.gameCartId);
 
+  LobbyModel.empty()
+      : id = "",
+        name = "",
+         playersIds = [],
+         ping = 0,
+         closed = false,
+         gameCartId = "";
+
   LobbyModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         name = json['name'],

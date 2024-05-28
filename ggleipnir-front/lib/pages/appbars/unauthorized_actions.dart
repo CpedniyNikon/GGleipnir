@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
@@ -25,13 +24,7 @@ List<Widget> unAuthorizedActions(BuildContext context, Callback callback) {
         child: Text("Регистрация"),
       ),
     ),
-    InkWell(
-      onTap: () {},
-      child: const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Icon(Icons.account_circle_outlined),
-      ),
-    ),
+
   ];
 }
 

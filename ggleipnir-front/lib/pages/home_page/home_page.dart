@@ -7,6 +7,7 @@ import 'package:ggleipnir_front/pages/drawers/navigation_side.dart';
 import 'package:ggleipnir_front/pages/widget/current_lobby_widget.dart';
 import 'package:ggleipnir_front/pages/widget/game_list_widget.dart';
 import 'package:ggleipnir_front/pages/widget/lobby_list_widget.dart';
+import 'package:ggleipnir_front/pages/widget/profile_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -57,6 +58,14 @@ class _HomePageState extends State<HomePage> {
                             child: CurrentLobbyWidget(
                               gameId: state.pathParameters['gameId']!,
                               lobbyId: state.pathParameters['lobbyId']!,
+                            ),
+                          ),
+                      '/profile/:userId': (context, state, data) =>
+                          BeamPage(
+                            key: ValueKey('profile - ${DateTime.now()}'),
+                            type: BeamPageType.scaleTransition,
+                            child: ProfileWidget(
+                              userId: state.pathParameters['userId']!,
                             ),
                           ),
                       '*': (context, state, data) => BeamPage(

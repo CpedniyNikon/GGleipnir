@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
@@ -21,9 +22,9 @@ class CurrentLobbyWidget extends StatefulWidget {
 
 class _GameListWidgetState extends State<CurrentLobbyWidget> {
   Controller controller = Get.find();
-
   final TextEditingController _controller = TextEditingController();
   Timer? timer;
+  List<String> users = [];
 
   @override
   void initState() {
@@ -51,7 +52,6 @@ class _GameListWidgetState extends State<CurrentLobbyWidget> {
       padding: const EdgeInsets.all(32),
       child: Obx(
         () {
-          List<String> users = [];
           if (controller.lobbyRepository.value.lobbies.isNotEmpty) {
             users = controller.lobbyRepository.value.lobbies
                 .firstWhere((element) => element.id == widget.lobbyId)
@@ -97,24 +97,43 @@ class _GameListWidgetState extends State<CurrentLobbyWidget> {
                   children: [
                     Container(
                       color: Colors.grey.withOpacity(0.1),
-                      width: 300,
+                      width: 100,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           ListView.builder(
                             controller: ScrollController(),
                             shrinkWrap: true,
-                            itemCount: users.length,
+                            itemCount: controller.users.length,
                             itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                margin: const EdgeInsets.symmetric(vertical: 5),
-                                child: Text(users[index], textAlign: TextAlign.center,),
+                              return InkWell(
+                                onTap: () {
+                                  controller
+                                      .beamer?.currentState?.routerDelegate
+                                      .beamToNamed(
+                                          '/profile/${controller.users[index].id}');
+                                },
+                                child: Container(
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue.withOpacity(0.1),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Text(
+                                      controller.users[index].name,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ),
                               );
                             },
                           ),
                         ],
                       ),
                     ),
+                    VerticalDivider(),
                     Expanded(
                       child: SingleChildScrollView(
                         child: ListView.builder(
@@ -123,10 +142,32 @@ class _GameListWidgetState extends State<CurrentLobbyWidget> {
                           itemCount: messages.length,
                           reverse: true,
                           itemBuilder: (BuildContext context, int index) {
+                            final isMe = messages[index].userId ==
+                                controller.user.value.id;
                             return Container(
-                              margin: const EdgeInsets.symmetric(vertical: 5,horizontal: 15),
-                              child: Text('${messages[index].message}',
-                              textAlign: TextAlign.end,),
+                              alignment: isMe
+                                  ? Alignment.centerLeft
+                                  : Alignment.centerRight,
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 15),
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                    color: isMe
+                                        ? Colors.blue.withOpacity(0.1)
+                                        : Colors.green.withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: Text(
+                                    isMe
+                                        ? 'You: ${messages[index].message}'
+                                        : '${messages[index].userLogin}: ${messages[index].message}',
+                                    textAlign:
+                                        isMe ? TextAlign.left : TextAlign.right,
+                                  ),
+                                ),
+                              ),
                             );
                           },
                         ),

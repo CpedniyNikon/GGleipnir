@@ -5,9 +5,10 @@ class MessageModel {
   final String userId;
   final String message;
   final int createdAt;
+  final String userLogin;
 
   MessageModel(
-      this.id, this.lobbyId, this.userId, this.message, this.createdAt);
+      this.id, this.lobbyId, this.userId, this.message, this.createdAt, this.userLogin);
 
 
   MessageModel.fromJson(Map<String, dynamic> json)
@@ -15,7 +16,8 @@ class MessageModel {
         lobbyId = json['lobbyId'],
         userId = json['userId'],
         message = json['message'],
-        createdAt = json['createdAt'] as int;
+        createdAt = json['createdAt'] as int,
+        userLogin= json['userLogin'];
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -23,6 +25,7 @@ class MessageModel {
         'userId': userId,
         'message': message,
         'createdAt': createdAt,
+        'userLogin': userLogin,
       };
 
   @override
