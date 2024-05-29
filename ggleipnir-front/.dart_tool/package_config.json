@@ -110,6 +110,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dotted_border",
+      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/dotted_border-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "equatable",
       "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/equatable-2.0.5",
       "packageUri": "lib/",
@@ -242,6 +248,24 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "image_cropper",
+      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/image_cropper-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "image_cropper_for_web",
+      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/image_cropper_for_web-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "image_cropper_platform_interface",
+      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/image_cropper_platform_interface-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "image_picker",
       "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.1.1",
       "packageUri": "lib/",
@@ -294,6 +318,12 @@
       "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/js-0.7.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
     },
     {
       "name": "leak_tracker",
@@ -366,6 +396,12 @@
       "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "path_drawing",
+      "rootUri": "file:///C:/Users/carry/AppData/Local/Pub/Cache/hosted/pub.dev/path_drawing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "path_parsing",
@@ -596,7 +632,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-05-28T21:23:40.150115Z",
+  "generated": "2024-05-29T20:09:59.183780Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }

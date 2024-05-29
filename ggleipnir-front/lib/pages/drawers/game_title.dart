@@ -44,7 +44,7 @@ class _GameTitleState extends State<GameTitle> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 5),
+                      margin: const EdgeInsets.only(right: 5),
                       child: ClipOval(
                         child: CachedNetworkImage(
                           imageUrl: widget.model.imageUrl,
@@ -54,18 +54,20 @@ class _GameTitleState extends State<GameTitle> {
                         ),
                       ),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.model.name,
-                          style: GGTypography.commonStyle,
-                        ),
-                        Text(
-                          "${widget.model.category}",
-                          style: GGTypography.commonStyle,
-                        ),
-                      ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.model.name,
+                            style: GGTypography.commonStyle,
+                          ),
+                          Text(
+                            "${widget.model.category}",
+                            style: GGTypography.commonStyle,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

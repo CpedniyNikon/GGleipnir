@@ -35,9 +35,12 @@ class _GameWidgetState extends State<GameWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
-              controller
-                  .gameRepository.value.gamesOnline[widget.index].imageUrl,
+            Expanded(
+              child: Image.network(
+                controller
+                    .gameRepository.value.gamesOnline[widget.index].imageUrl,
+                fit: BoxFit.contain,
+              ),
             ),
             Text(
               maxLines: 1,

@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';
@@ -33,26 +35,28 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
       child: user != null
-          ? Column(
+          ? Stack(
               children: [
-                Text(
-                  'userId: ${user?.id}',
-                  style: GGTypography.header1,
-                ),
-                Text(
-                  'name: ${user?.name}',
-                  style: GGTypography.header1,
-                ),
-                Text(
-                  'info: ${user?.meta}',
-                  style: GGTypography.header1,
-                ),
-                Expanded(
-                  child: Image.memory(
-                    base64Decode(user!.image),
-                    fit: BoxFit.contain,
+                Positioned(
+                  top: 20,
+                  right: 20,
+                  child: Column(
+                    children: [
+                      ClipOval(
+                        child: Image.memory(
+                          width: 200,
+                          height: 200,
+                          base64Decode(user!.image),
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                      Text(
+                        '${user?.name}',
+                        style: GGTypography.mainHeaderStyle,
+                      ),
+                    ],
                   ),
                 )
               ],

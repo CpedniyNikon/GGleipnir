@@ -23,6 +23,7 @@ class _GameListWidgetState extends State<GameListWidget> {
     // controller.getGameList();
     timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
       controller.getGameList();
+
     });
     super.initState();
   }

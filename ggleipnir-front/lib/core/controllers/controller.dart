@@ -22,8 +22,6 @@ class Controller extends GetxController {
   RxList<UserModel> users = RxList();
   final user = Rx<UserModel>(const UserModel.empty());
 
-  final lobby = Rx<LobbyModel>(LobbyModel.empty());
-
   late GlobalKey<BeamerState>? beamer;
   final toggle = Rx<bool>(false);
   final isAuthorized = Rx<bool>(false);
@@ -141,7 +139,6 @@ class Controller extends GetxController {
 
     if (response.statusCode == 200) {
       final UserModel data = UserModel.fromJson(json.decode(response.body));
-      debugPrint(data.toString());
 
       user.value = data;
       isAuthorized.value = true;
@@ -208,19 +205,15 @@ class Controller extends GetxController {
     messages.refresh();
   }
 
-  Future<void> getLobby(String lobbyId) async {
+  Future<LobbyModel> getLobby(String lobbyId) async {
     debugPrint(lobbyId);
     final response =
-        await http.get(Uri.parse('$baseUrl/v1/lobby/lobby?lobbyId=${lobbyId}'));
-
+        await http.get(Uri.parse('$baseUrl/v1/lobby/lobby?lobbyId=$lobbyId'));
     if (response.statusCode == 200) {
       final LobbyModel lobbyModel = LobbyModel.fromJson(json.decode(response.body));
-      lobby.value = lobbyModel;
-    } else {
-      throw Exception('Failed to load data');
+      return lobbyModel;
     }
-    lobby.refresh();
-    debugPrint('lobby list received');
+    return LobbyModel.empty();
   }
 
   Future<UserModel> getUser(String userId) async {

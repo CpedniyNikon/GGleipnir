@@ -18,7 +18,7 @@ class GGAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _GGAppBarState extends State<GGAppBar> {
   final Controller controller = Get.find();
 
-  callback()  {
+  callback() {
     setState(() {});
   }
 
@@ -30,24 +30,30 @@ class _GGAppBarState extends State<GGAppBar> {
           preferredSize: Size.fromHeight(1),
           child: Divider(height: 1),
         ),
-        title: InkWell(
-          onTap: () {
-            controller.beamer!.currentState?.routerDelegate.beamToNamed('/');
-          },
-          child: const Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.home),
-              SizedBox(
-                width: 20,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            InkWell(
+              onTap: () {
+                controller.beamer!.currentState?.routerDelegate
+                    .beamToNamed('/');
+              },
+              child: const Row(
+                children: [
+                  Icon(Icons.home),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text('GGleipnir'),
+                ],
               ),
-              Text('GGleipnir'),
-            ],
-          ),
+            ),
+            Expanded(child: Container()),
+            controller.isAuthorized.value
+                ? const AuthorizedActions()
+                : const UnAuthorizedActions(),
+          ],
         ),
-        actions: controller.isAuthorized.value
-            ? authorizedActions()
-            : unAuthorizedActions(context, callback),
       ),
     );
   }
