@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';
-
+import 'package:universal_html/html.dart' as html;
 List<Widget> unAuthorizedActions(BuildContext context, Callback callback) {
   return <Widget>[
     InkWell(
@@ -143,6 +146,8 @@ void _showRegistrationDialog(BuildContext context, Callback callback) {
   final loginController = TextEditingController();
   final passwordController = TextEditingController();
   final nameController = TextEditingController();
+  String? _base64Image;
+
   showDialog(
     barrierDismissible: false,
     barrierColor: Colors.black38.withOpacity(0.8),
@@ -239,10 +244,32 @@ void _showRegistrationDialog(BuildContext context, Callback callback) {
             const SizedBox(
               height: 20,
             ),
+            ElevatedButton(
+              child: const Text('pick file'),
+              onPressed: () async {
+                var uploadInput = html.FileUploadInputElement();
+                uploadInput.click();
+                uploadInput.onChange.listen((e) {
+                  final files = uploadInput.files;
+                  if (files?.length == 1) {
+                    final file = files!.first;
+                    html.FileReader reader = html.FileReader();
+                    reader.onLoadEnd.listen((e) async {
+                      var uploadedImage = reader.result as Uint8List;
+                      _base64Image = base64Encode(uploadedImage);
+                    });
+                    reader.readAsArrayBuffer(file);
+                  }
+                });
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             InkWell(
               onTap: () {
                 controller.register(loginController.text,
-                    passwordController.text, nameController.text, 'metainfa');
+                    passwordController.text, nameController.text, _base64Image!, 'metainfa');
                 Navigator.of(context).pop();
               },
               child: Container(

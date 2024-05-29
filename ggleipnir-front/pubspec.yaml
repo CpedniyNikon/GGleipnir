@@ -22,6 +22,13 @@ dependencies:
   provider: ^6.1.2
   beamer: ^1.6.1
   flutter_svg: ^2.0.10+1
+  minio_flutter: ^0.0.1
+  universal_html: ^2.2.4
+  uuid: ^4.4.0
+  image_picker_for_web: ^3.0.4
+  image_picker: ^1.1.1
+  file_picker: ^8.0.3
+  mime: ^1.0.5
 
 dev_dependencies:
   flutter_test:

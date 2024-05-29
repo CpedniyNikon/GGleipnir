@@ -154,7 +154,7 @@ class Controller extends GetxController {
     return result;
   }
 
-  Future<void> register(String login, String password, String name,
+  Future<void> register(String login, String password, String name, String imageData,
       String meta) async {
     final response = await http.post(Uri.parse('$baseUrl/v1/register'),
         headers: {
@@ -165,6 +165,7 @@ class Controller extends GetxController {
           'password': password,
           'name': name,
           'meta': meta,
+          'image': imageData,
         }));
 
     if (response.statusCode == 200) {

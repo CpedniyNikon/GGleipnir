@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
@@ -47,6 +49,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   'info: ${user?.meta}',
                   style: GGTypography.header1,
                 ),
+                Expanded(
+                  child: Image.memory(
+                    base64Decode(user!.image),
+                    fit: BoxFit.contain,
+                  ),
+                )
               ],
             )
           : const CircularProgressIndicator(),
