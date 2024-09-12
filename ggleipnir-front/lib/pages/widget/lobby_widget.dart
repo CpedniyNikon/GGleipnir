@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
-import 'package:ggleipnir_front/src/routes/routes.dart';
 
 class LobbyWidget extends StatefulWidget {
   final int index;

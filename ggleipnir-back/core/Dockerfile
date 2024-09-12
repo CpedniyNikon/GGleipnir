@@ -1,4 +1,4 @@
-FROM gradle:8.1.1 AS BUILD
+FROM mirror.gcr.io/library/gradle:8.1.1 AS BUILD
 
 WORKDIR /opt/app
 
@@ -6,7 +6,7 @@ COPY . .
 
 RUN gradle build -x test
 
-FROM openjdk:17.0.1-jdk-slim
+FROM mirror.gcr.io/library/openjdk:17.0.1-jdk-slim
 
 ARG JAR_FILE=/opt/app/build/libs/*SNAPSHOT.jar
 

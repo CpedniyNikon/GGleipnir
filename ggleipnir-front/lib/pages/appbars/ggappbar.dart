@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:ggleipnir_front/pages/appbars/authorized_actions.dart';
 import 'package:ggleipnir_front/pages/appbars/unauthorized_actions.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';

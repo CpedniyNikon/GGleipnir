@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';

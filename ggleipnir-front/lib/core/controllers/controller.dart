@@ -102,7 +102,7 @@ class Controller extends GetxController {
 
   Future<void> joinLobby(String userId, String lobbyId) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyId}'),
+      Uri.parse('$baseUrl/v1/lobby/user?userId=$userId&lobbyId=$lobbyId'),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -118,7 +118,7 @@ class Controller extends GetxController {
     for (int i = 0; i < lobbyRepository.value.lobbies.length; i++) {
       await http.delete(
         Uri.parse(
-            '$baseUrl/v1/lobby/user?userId=${userId}&lobbyId=${lobbyRepository
+            '$baseUrl/v1/lobby/user?userId=$userId&lobbyId=${lobbyRepository
                 .value.lobbies[i].id}'),
       );
     }
@@ -193,7 +193,7 @@ class Controller extends GetxController {
 
   Future<void> getMessages(String lobbyId) async {
     final response =
-    await http.get(Uri.parse('$baseUrl/v1/messages?lobbyId=${lobbyId}'));
+    await http.get(Uri.parse('$baseUrl/v1/messages?lobbyId=$lobbyId'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonData =
@@ -218,7 +218,7 @@ class Controller extends GetxController {
 
   Future<UserModel> getUser(String userId) async {
     final response =
-    await http.get(Uri.parse('$baseUrl/v1/user?userId=${userId}'));
+    await http.get(Uri.parse('$baseUrl/v1/user?userId=$userId'));
 
     if (response.statusCode == 200) {
       final UserModel data = UserModel.fromJson(json.decode(response.body));

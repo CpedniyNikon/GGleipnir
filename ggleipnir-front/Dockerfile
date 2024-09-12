@@ -1,5 +1,5 @@
 # Environemnt to install flutter and build web
-FROM debian:latest AS build-env
+FROM mirror.gcr.io/library/debian:latest AS build-env
 
 # install all needed stuff
 RUN apt-get update
@@ -38,7 +38,7 @@ RUN flutter build web
 # once heare the app will be compiled and ready to deploy
 
 # use nginx to deploy
-FROM nginx:1.25.2-alpine
+FROM mirror.gcr.io/library/nginx:1.25.2-alpine
 
 # copy the info of the builded web app to nginx
 COPY --from=build-env /app/build/web /usr/share/nginx/html

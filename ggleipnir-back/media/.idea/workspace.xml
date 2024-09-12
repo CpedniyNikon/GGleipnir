@@ -6,25 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="d71feff6-9c27-469f-ac8a-6dc1cd0691e2" name="Changes" comment="final media commit">
       <change beforePath="$PROJECT_DIR$/../../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../core/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/chrome-device/Default/BrowsingTopicsState" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/chrome-device/Default/BrowsingTopicsState" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/chrome-device/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/chrome-device/Default/DIPS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/chrome-device/Default/History" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/chrome-device/Default/History" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.dart_tool/version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/core/controllers/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/core/controllers/controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/core/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/core/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/appbars/ggappbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/appbars/ggappbar.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/appbars/unauthorized_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/appbars/unauthorized_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/drawers/navigation_side.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/drawers/navigation_side.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/current_lobby_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/current_lobby_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/game_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/game_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/lobby_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/lobby_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/profile_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/lib/pages/widget/profile_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ggleipnir-front/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ggleipnir-front/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +110,9 @@
       <workItem from="1716932058212" duration="122000" />
       <workItem from="1716935383922" duration="311000" />
       <workItem from="1716935709269" duration="455000" />
+      <workItem from="1717055460324" duration="708000" />
+      <workItem from="1717059045026" duration="168000" />
+      <workItem from="1717365965607" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="final media commit">
       <option name="closed" value="true" />

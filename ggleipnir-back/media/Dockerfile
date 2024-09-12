@@ -1,4 +1,4 @@
-FROM node:21
+FROM mirror.gcr.io/library/node:21
 
 # создание директории приложения
 WORKDIR /media

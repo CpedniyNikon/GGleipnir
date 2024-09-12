@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:ggleipnir_front/core/controllers/controller.dart';
 import 'package:ggleipnir_front/core/globals/constants/gg_typography.dart';
 import 'package:universal_html/html.dart' as html;

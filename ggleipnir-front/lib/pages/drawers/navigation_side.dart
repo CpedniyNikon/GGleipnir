@@ -38,9 +38,9 @@ class _FollowedGameDrawerState extends State<NavigationSide> {
                           html.window.screen?.width?.toDouble())
                       ? Container()
                       : InkWell(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: const Icon(Icons.arrow_back),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 8),
+                            child: Icon(Icons.arrow_back),
                           ),
                           onTap: () {
                             controller.toggle.value = !controller.toggle.value;

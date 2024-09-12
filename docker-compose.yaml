@@ -1,12 +1,12 @@
 services:
-  web:
-    container_name: web
-    build:
-      context: ggleipnir-front
-      dockerfile: Dockerfile
-    ports:
-      - 10010:80
-    restart: always
+  # web:
+  #   container_name: web
+  #   build:
+  #     context: ggleipnir-front
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 10010:80
+  #   restart: always
 
   core:
     container_name: core
@@ -45,7 +45,7 @@ services:
       - common
 
   postgrya:
-    image: postgres
+    image: mirror.gcr.io/library/postgres
     environment:
         POSTGRES_DB: database
         POSTGRES_USER: postgres
@@ -59,7 +59,7 @@ services:
       - common
 
   liquibase:
-    image: liquibase/liquibase:4.9.1
+    image: mirror.gcr.io/library/liquibase
     container_name: liquibase_container
     depends_on:
       - postgrya
